@@ -483,6 +483,162 @@ dialog.new-game-dialog { width: 820px; max-width: min(820px, calc(100vw - 32px))
  .story-camp > span { font-size: 12px; }
  .story-more .btn { flex: 1 1 130px; }
 }
+
+/* v0.5: a playable scene, a personal consequence, then the details. */
+.play-frame { --muted:#657166; min-height:100dvh; background:#f3f2eb; }
+.play-masthead { max-width:1040px; margin:auto; height:76px; display:flex; align-items:center; justify-content:space-between; padding:0 34px; border-bottom:1px solid #d9ddd2; gap:20px; }
+.play-brand { font-family:var(--serif); font-size:27px; font-weight:700; color:#214e3e; letter-spacing:-1px; display:flex; align-items:baseline; gap:9px; min-height:44px; }
+.play-brand span { font-size:11px; font-weight:400; letter-spacing:1px; color:#8b9487; }
+.play-masthead nav { display:flex; gap:4px; }
+.play-masthead nav button { min-height:44px; padding:10px 18px; font-size:13px; color:#6c776b; border-radius:6px; }
+.play-masthead nav [aria-current] { color:#244f3f; font-weight:700; background:#e5eadd; }
+.play-settings { min-height:44px; display:flex; align-items:center; gap:7px; font-size:11px; color:#657166; }
+.play-settings .icon { width:18px; height:18px; }
+.play-main { max-width:760px; margin:auto; padding:23px 28px 32px; }
+.play-byline { display:flex; align-items:center; justify-content:space-between; gap:15px; color:#737c70; font-size:11px; padding-bottom:20px; }
+.play-byline b { color:#485847; font-weight:600; }
+.v5-story { gap:0; max-width:none; }
+.chapter-line { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:12px; }
+.chapter-label { font-size:10px; letter-spacing:.08em; font-weight:700; color:#7d8b73; }
+.chapter-line h1 { margin-top:5px; font-family:var(--sans); font-size:15px; font-weight:600; line-height:1.6; color:#445c47; }
+.chapter-count { white-space:nowrap; font-variant-numeric:tabular-nums; font-size:22px; font-weight:700; color:#33563e; }
+.chapter-count small { font-size:12px; font-weight:400; color:#8b9685; }
+.chapter-progress { height:3px; background:#dce2d5; margin-bottom:20px; overflow:hidden; border-radius:8px; }
+.chapter-progress span { display:block; height:100%; background:#4e7550; transition:width .25s; }
+.scene-card { padding:25px 28px 15px; border:1px solid #cbd6c3; border-top:4px solid #2b5945; border-radius:4px 4px 14px 14px; background:#fffef9; box-shadow:0 8px 28px #253d2506; margin:0; }
+.scene-card .story-top { margin-bottom:14px; align-items:center; gap:12px; }
+.scene-speaker { display:flex; align-items:center; gap:8px; color:#465d44; font-size:12px; font-weight:600; }
+.scene-speaker .icon { width:16px; height:16px; }
+.scene-tag { font-size:10px; color:#897b5e; background:#f5f0e3; padding:4px 8px; border-radius:4px; white-space:nowrap; }
+.scene-card h2 { font-family:var(--serif); font-size:29px; line-height:1.45; letter-spacing:-.8px; margin:0 0 12px; outline-offset:6px; }
+.scene-card .story-description { font-size:14px; line-height:1.85; color:#5d6759; margin:0 0 22px; }
+.scene-card .story-choices { display:grid; gap:9px; margin:0; }
+.scene-card .choice { min-height:70px; background:#fafbf5; border:1px solid #d9e1d0; border-radius:7px; gap:13px; padding:13px 15px; width:100%; color:#304933; transition:background .15s,border-color .15s,transform .15s; }
+.scene-card .choice:hover { border-color:#56815a; background:#edf3e5; transform:translateX(2px); }
+.scene-card .choice:active { transform:translateX(2px) scale(.995); }
+.scene-card .choice strong { font-size:14px; line-height:1.6; }
+.scene-card .choice-description { font-size:12px; line-height:1.7; color:#687460; margin-top:3px; }
+.scene-card .choice-number { flex:0 0 27px; width:27px; height:27px; border-radius:5px; border:1px solid #d4dfc9; color:#6f8564; font-weight:500; background:#eff3e8; font-size:11px; }
+.scene-card .choice-chevron { width:16px; height:16px; margin-left:auto; color:#8ba17c; flex-shrink:0; }
+.scene-fiction { font-size:10px; line-height:1.6; text-align:center; color:#8b9181; margin-top:16px; }
+.compact-receipt { padding:15px 5px; margin-top:2px; display:flex; align-items:flex-start; gap:10px; border:0; border-bottom:1px solid #dce0d3; border-radius:0; background:transparent; }
+.receipt-mark { font-size:22px; color:#a18a60; line-height:1.3; }
+.compact-receipt > div { min-width:0; flex:1; }
+.compact-receipt h3 { font-size:10px; color:#8a795b; margin:0 0 5px; font-weight:600; }
+.compact-receipt p { font-size:13px; color:#626b5a; line-height:1.75; }
+.compact-receipt .outcome-details { background:transparent; border:0; padding:0; margin:0; }
+.compact-receipt .outcome-details > summary { font-size:11px; min-height:34px; color:#7e8874; padding:6px 0; margin:0; }
+.identity-strip { display:flex; align-items:center; gap:9px; flex-wrap:wrap; padding:12px 2px; }
+.identity-strip > span { display:flex; align-items:center; gap:5px; font-size:10px; color:#7d8774; }
+.identity-strip .icon { width:14px; height:14px; }
+.identity-strip > strong { font-size:12px; font-weight:600; color:#35573d; }
+.identity-strip > .text-btn { margin-left:auto; font-size:11px; min-height:36px; }
+.cast-panel { border-top:1px solid #dce0d3; border-bottom:1px solid #dce0d3; }
+.cast-panel > summary { min-height:52px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 2px; font-size:11px; font-weight:600; color:#65725e; }
+.cast-panel small { font-size:9px; color:#8b9582; font-weight:400; margin-left:3px; }
+.cast-chips { display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-end; }
+.cast-chip { padding:4px 7px; border:1px solid #d7decd; border-radius:4px; font-size:10px; font-weight:400; color:#7c836d; background:#edf0e6; }
+.cast-chip b { font-weight:600; color:#516546; margin-right:3px; }
+.cast-list { padding:0 0 12px; }
+.cast-list article { display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid #e3e6db; }
+.cast-avatar { display:grid; place-items:center; font-family:var(--serif); font-size:17px; width:35px; height:39px; flex-shrink:0; background:#dfe5d4; border-radius:5px; color:#6e805d; }
+.cast-list article > div { flex:1; }
+.cast-list strong { font-size:12px; }
+.cast-list p { font-size:11px; line-height:1.7; color:#748168; margin-top:3px; }
+.cast-list .badge { font-size:10px; }
+.camp-details > summary { color:#808b76; font-size:11px; padding:15px 2px; }
+.camp-details > p { font-size:12px; }
+.play-footer { max-width:704px; margin:0 auto; padding:15px 0 30px; display:flex; gap:18px; border-top:1px solid #d9ddd2; align-items:center; font-size:10px; color:#9a9f90; }
+.play-footer button { font-size:10px; color:#7d8872; min-height:44px; }
+.play-footer > span { margin-right:auto; }
+.welcome-screen { padding:24px 0 30px; }
+.welcome-issue { display:flex; align-items:center; justify-content:space-between; gap:15px; border-bottom:1px solid #bdc8b3; padding-bottom:12px; font-size:10px; color:#7a896d; letter-spacing:.05em; }
+.welcome-copy { padding:42px 0 28px; }
+.welcome-kicker { font-size:12px; font-weight:600; color:#8d7750; }
+.welcome-copy h1 { font-family:var(--serif); font-size:40px; line-height:1.5; letter-spacing:-1.5px; margin:16px 0; color:#263e2e; }
+.welcome-copy h1 em { font-style:normal; color:#567449; }
+.welcome-copy p { font-size:14px; line-height:1.9; color:#78826e; }
+.welcome-actions { display:grid; gap:12px; }
+.welcome-choice { display:flex; align-items:center; text-align:left; gap:18px; width:100%; min-height:92px; padding:21px 24px; background:#27533f; border:1px solid #27533f; border-radius:8px; color:#fffef1; }
+.welcome-choice:hover { background:#34644b; }
+.welcome-icon { display:grid; place-items:center; width:43px; height:43px; border:1px solid #6e8c6c; border-radius:7px; font-family:var(--serif); font-size:22px; }
+.welcome-choice strong { font-size:16px; font-weight:600; }
+.welcome-choice small { display:block; font-size:12px; color:#b7c9ac; margin-top:6px; }
+.welcome-choice > .icon { margin-left:auto; width:20px; }
+.real-choice { background:#fffef6; color:#405a3c; border-color:#bbcbb0; }
+.real-choice:hover { background:#eaf0e0; }
+.real-choice small { color:#829174; }
+.real-choice .welcome-icon { border-color:#cbd6bf; }
+.welcome-caption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:11px; color:#8c957e; margin-top:18px; }
+.welcome-fiction { font-size:10px; text-align:center; line-height:1.9; color:#9b9e90; margin-top:32px; }
+.chapter-recap { padding:20px; margin:18px 0; border:1px solid #d9cdb3; border-radius:7px; background:#f5f0e3; }
+.chapter-recap h3 { font-family:var(--serif); font-size:22px; color:#6e5b38; margin:8px 0; }
+.chapter-recap > p { font-size:12px; line-height:1.8; color:#857658; }
+.chapter-recap dl { margin:14px 0 0; display:grid; gap:10px; }
+.chapter-recap dl > div { display:grid; grid-template-columns:80px 1fr; gap:12px; border-top:1px solid #e3dac7; padding-top:10px; font-size:12px; line-height:1.7; }
+.chapter-recap dt { color:#9a8966; }
+.chapter-recap dd { margin:0; color:#665d46; }
+.story-result-head .result-stamp { font-size:24px; }
+.vote-score { font-size:52px; font-weight:700; color:#2e5941; margin:12px 0 0; line-height:1.4; font-variant-numeric:tabular-nums; }
+.vote-score small { font-size:20px; margin-left:4px; }
+.counted-votes { background:#f7f8f0; border:1px solid #dee4d4; padding:10px 18px; border-radius:7px; }
+.result-row.player-row { color:#275b3d; }
+.result-row small { font-size:10px; color:#8a9480; }
+.election-receipt { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:12px; border-top:1px solid #e0e4d6; margin-top:20px; padding-top:16px; }
+.election-receipt p { width:100%; color:#8a9380; font-size:11px; line-height:1.7; }
+.new-chapter-invite { padding:16px; margin-top:12px; border:1px dashed #b9c9ad; border-radius:6px; }
+@media(max-width:760px) {
+ .play-masthead { height:58px; padding:0 18px; gap:10px; }
+ .play-brand { font-size:23px; gap:5px; }
+ .play-brand span { display:none; }
+ .play-masthead nav { gap:0; }
+ .play-masthead nav button { font-size:11px; padding:8px 12px; }
+ .play-settings { font-size:10px; gap:4px; }
+ .play-settings .icon { width:15px; }
+ .play-main { padding:16px 16px 24px; }
+ .play-byline { font-size:10px; padding-bottom:16px; }
+ .chapter-label { font-size:9px; }
+ .chapter-line h1 { font-size:13px; }
+ .chapter-count { font-size:19px; }
+ .chapter-progress { margin-bottom:14px; }
+ .scene-card { padding:18px 17px 12px; }
+ .scene-card .story-top { margin-bottom:11px; }
+ .scene-speaker { font-size:11px; }
+ .scene-tag { font-size:9px; }
+ .scene-card h2 { font-size:24px; line-height:1.45; margin-bottom:10px; }
+ .scene-card .story-description { font-size:13px; line-height:1.8; margin-bottom:17px; }
+ .scene-card .choice { min-height:67px; padding:11px; gap:10px; }
+ .scene-card .choice strong { font-size:13px; }
+ .scene-card .choice-description { font-size:11px; line-height:1.65; }
+ .scene-card .choice-number { width:23px; height:23px; flex-basis:23px; font-size:10px; }
+ .scene-card .choice-chevron { display:none; }
+ .scene-fiction { font-size:9px; margin-top:12px; }
+ .compact-receipt { padding:13px 2px; }
+ .compact-receipt p { font-size:12px; }
+ .cast-panel > summary { align-items:flex-start; flex-direction:column; gap:8px; }
+ .cast-chips { justify-content:flex-start; }
+ .cast-chip { font-size:10px; }
+ .play-footer { margin:0 18px; padding-bottom:15px; gap:12px; }
+ .welcome-screen { padding:17px 0 5px; }
+ .welcome-copy { padding:30px 0 23px; }
+ .welcome-copy h1 { font-size:29px; line-height:1.55; letter-spacing:-1px; margin:14px 0; }
+ .welcome-copy p { font-size:13px; }
+ .welcome-choice { padding:17px; min-height:82px; gap:14px; }
+ .welcome-choice strong { font-size:14px; }
+ .welcome-choice small { font-size:11px; }
+ .welcome-icon { width:37px; height:40px; font-size:20px; }
+ .welcome-caption { font-size:10px; gap:6px; }
+ .welcome-fiction { margin-top:24px; }
+ .chapter-recap { padding:16px; }
+ .chapter-recap h3 { font-size:20px; }
+ .chapter-recap dl > div { grid-template-columns:66px 1fr; gap:8px; font-size:11px; }
+ .story-result-head .result-stamp { font-size:22px; }
+}
+@media(prefers-reduced-motion:reduce) { .scene-card .choice:hover,.scene-card .choice:active { transform:none; } }
+body:has(.play-frame) #toast { left:50%; bottom:24px; max-width:min(620px,calc(100vw - 28px)); font-size:12px; line-height:1.75; padding:13px 18px; box-shadow:0 10px 38px #18362325; }
+.compact-receipt p.consequence-notice { margin-top:8px; padding-left:10px; border-left:2px solid #b4925f; color:#8d6140; }
+.outcome-notice { margin:9px 0; }
+.archive-footprints { padding-left:16px; font-size:11px; line-height:1.9; color:var(--muted); margin:12px 0; }
 </style>
  
 </head>
@@ -3044,6 +3200,29 @@ const EVENTS = [
  "corruption": true,
  "choices": [
   {
+   "title": "지원도 청탁도 거절한다",
+   "desc": "빚은 지지 않습니다. 행사 규모를 줄여야 합니다.",
+   "effect": {
+    "trust": 5,
+    "funds": -9,
+    "recognition": -3
+   },
+   "groups": [
+    1,
+    -1,
+    2,
+    2
+   ],
+   "after": "현수막과 차량을 줄였습니다. 태오는 다른 모임을 돕겠다고 했습니다.",
+   "values": {
+    "principle": 5
+   },
+   "corruption": {
+    "risk": -4,
+    "leverage": -2
+   }
+  },
+  {
    "title": "조건을 받고 지원을 쓴다",
    "desc": "행사는 커집니다. 업자는 당신의 약속을 기억합니다.",
    "effect": {
@@ -3069,29 +3248,6 @@ const EVENTS = [
    "followUp": {
     "after": 2,
     "id": "favor-invoice"
-   }
-  },
-  {
-   "title": "지원도 청탁도 거절한다",
-   "desc": "빚은 지지 않습니다. 행사 규모를 줄여야 합니다.",
-   "effect": {
-    "trust": 5,
-    "funds": -9,
-    "recognition": -3
-   },
-   "groups": [
-    1,
-    -1,
-    2,
-    2
-   ],
-   "after": "현수막과 차량을 줄였습니다. 태오는 다른 모임을 돕겠다고 했습니다.",
-   "values": {
-    "principle": 5
-   },
-   "corruption": {
-    "risk": -4,
-    "leverage": -2
    }
   },
   {
@@ -3129,32 +3285,28 @@ const EVENTS = [
  "corruption": true,
  "choices": [
   {
-   "title": "서진의 친척을 책임자로 앉힌다",
-   "desc": "충성하는 조직을 얻습니다. 일하던 사람이 밀려납니다.",
+   "title": "지원도 포기하고 채용을 미룬다",
+   "desc": "거래는 피합니다. 빈자리는 당신이 메웁니다.",
    "effect": {
-    "network": 12,
-    "recognition": 3,
-    "policy": -3,
-    "trust": -3
+    "trust": 3,
+    "network": -3,
+    "energy": -9,
+    "funds": 4
    },
    "groups": [
-    0,
-    2,
-    -2,
-    -2
+    1,
+    -1,
+    1,
+    1
    ],
-   "after": "서진이 새 활동가들을 데려왔습니다. 지우는 책임자 공고를 내리지 못한 채 자리를 떠났습니다.",
+   "after": "채용을 멈췄습니다. 급한 연락과 일정 정리는 밤마다 당신에게 쌓였습니다.",
    "values": {
-    "ambition": 5,
-    "pragmatism": 2
+    "principle": 3,
+    "initiative": 3
    },
    "corruption": {
-    "risk": 13,
-    "leverage": 15
-   },
-   "followUp": {
-    "after": 2,
-    "id": "nepotism-backlash"
+    "risk": -2,
+    "leverage": -3
    }
   },
   {
@@ -3181,28 +3333,32 @@ const EVENTS = [
    }
   },
   {
-   "title": "지원도 포기하고 채용을 미룬다",
-   "desc": "거래는 피합니다. 빈자리는 당신이 메웁니다.",
+   "title": "서진의 친척을 책임자로 앉힌다",
+   "desc": "충성하는 조직을 얻습니다. 일하던 사람이 밀려납니다.",
    "effect": {
-    "trust": 3,
-    "network": -3,
-    "energy": -9,
-    "funds": 4
+    "network": 12,
+    "recognition": 3,
+    "policy": -3,
+    "trust": -3
    },
    "groups": [
-    1,
-    -1,
-    1,
-    1
+    0,
+    2,
+    -2,
+    -2
    ],
-   "after": "채용을 멈췄습니다. 급한 연락과 일정 정리는 밤마다 당신에게 쌓였습니다.",
+   "after": "서진이 새 활동가들을 데려왔습니다. 지우는 책임자 공고를 내리지 못한 채 자리를 떠났습니다.",
    "values": {
-    "principle": 3,
-    "initiative": 3
+    "ambition": 5,
+    "pragmatism": 2
    },
    "corruption": {
-    "risk": -2,
-    "leverage": -3
+    "risk": 13,
+    "leverage": 15
+   },
+   "followUp": {
+    "after": 2,
+    "id": "nepotism-backlash"
    }
   }
  ]
@@ -3244,29 +3400,6 @@ const EVENTS = [
    }
   },
   {
-   "title": "관계를 밝히고 추천에서 빠진다",
-   "desc": "이해충돌을 피합니다. 사업에 발언할 기회도 놓칩니다.",
-   "effect": {
-    "trust": 6,
-    "network": -5,
-    "recognition": -3
-   },
-   "groups": [
-    1,
-    -2,
-    3,
-    2
-   ],
-   "after": "추천을 하지 않겠다고 알렸습니다. 태오는 섭섭하다고 했고, 사업 논의는 당신 없이 진행됐습니다.",
-   "values": {
-    "principle": 5
-   },
-   "corruption": {
-    "risk": -5,
-    "leverage": -3
-   }
-  },
-  {
    "title": "모든 제안을 검토한 뒤 공개 의견을 낸다",
    "desc": "판단의 근거를 남깁니다. 시간이 들고 누구도 지원을 보장하지 않습니다.",
    "effect": {
@@ -3289,6 +3422,29 @@ const EVENTS = [
    "corruption": {
     "risk": -3
    }
+  },
+  {
+   "title": "관계를 밝히고 추천에서 빠진다",
+   "desc": "이해충돌을 피합니다. 사업에 발언할 기회도 놓칩니다.",
+   "effect": {
+    "trust": 6,
+    "network": -5,
+    "recognition": -3
+   },
+   "groups": [
+    1,
+    -2,
+    3,
+    2
+   ],
+   "after": "추천을 하지 않겠다고 알렸습니다. 태오는 섭섭하다고 했고, 사업 논의는 당신 없이 진행됐습니다.",
+   "values": {
+    "principle": 5
+   },
+   "corruption": {
+    "risk": -5,
+    "leverage": -3
+   }
   }
  ]
 },
@@ -3299,33 +3455,6 @@ const EVENTS = [
  "text": "가상의 주민행사 공동기금 정산을 돕는 민호가 개인 식사와 이동 경비도 행사 비용으로 넣자고 합니다. 공적인 일에 시간을 썼으니 이 정도는 괜찮지 않겠느냐고 묻습니다.",
  "corruption": true,
  "choices": [
-  {
-   "title": "개인 경비도 기금으로 처리한다",
-   "desc": "당장의 부담을 덥니다. 설명할 수 없는 지출이 남습니다.",
-   "effect": {
-    "funds": 18,
-    "energy": 6,
-    "trust": -4
-   },
-   "groups": [
-    -1,
-    1,
-    -4,
-    -2
-   ],
-   "after": "개인 부담은 줄었습니다. 공동기금의 사용처에는 행사와 무관한 경비가 섞였습니다.",
-   "values": {
-    "pragmatism": 5
-   },
-   "corruption": {
-    "risk": 18,
-    "leverage": 6
-   },
-   "followUp": {
-    "after": 2,
-    "id": "expense-audit"
-   }
-  },
   {
    "title": "개인 경비는 내가 부담한다",
    "desc": "공금의 선을 지킵니다. 다음 활동은 줄여야 합니다.",
@@ -3371,6 +3500,33 @@ const EVENTS = [
    "corruption": {
     "risk": -7
    }
+  },
+  {
+   "title": "개인 경비도 기금으로 처리한다",
+   "desc": "당장의 부담을 덥니다. 설명할 수 없는 지출이 남습니다.",
+   "effect": {
+    "funds": 18,
+    "energy": 6,
+    "trust": -4
+   },
+   "groups": [
+    -1,
+    1,
+    -4,
+    -2
+   ],
+   "after": "개인 부담은 줄었습니다. 공동기금의 사용처에는 행사와 무관한 경비가 섞였습니다.",
+   "values": {
+    "pragmatism": 5
+   },
+   "corruption": {
+    "risk": 18,
+    "leverage": 6
+   },
+   "followUp": {
+    "after": 2,
+    "id": "expense-audit"
+   }
   }
  ]
 },
@@ -3381,6 +3537,27 @@ const EVENTS = [
  "text": "가상의 홍보업자 다온이 실제 지지자인 척하는 온라인 반응을 만들겠다고 합니다. 시작만 띄우면 진짜 관심도 따라온다고 합니다. 캠프의 최근 게시물은 거의 읽히지 않았습니다.",
  "corruption": true,
  "choices": [
+  {
+   "title": "홍보를 쉬고 정책 준비에 쓴다",
+   "desc": "허위 인기는 피합니다. 한동안 이름이 덜 보입니다.",
+   "effect": {
+    "policy": 8,
+    "recognition": -5
+   },
+   "groups": [
+    0,
+    -1,
+    2,
+    1
+   ],
+   "after": "게시물 대신 정책 메모가 쌓였습니다. 행사 진행자는 당신의 근황을 물었습니다.",
+   "values": {
+    "evidence": 5
+   },
+   "corruption": {
+    "risk": -2
+   }
+  },
   {
    "title": "가짜 반응을 맡긴다",
    "desc": "짧게 주목받습니다. 지지의 출처가 약점이 됩니다.",
@@ -3431,27 +3608,6 @@ const EVENTS = [
    "corruption": {
     "risk": -3
    }
-  },
-  {
-   "title": "홍보를 쉬고 정책 준비에 쓴다",
-   "desc": "허위 인기는 피합니다. 한동안 이름이 덜 보입니다.",
-   "effect": {
-    "policy": 8,
-    "recognition": -5
-   },
-   "groups": [
-    0,
-    -1,
-    2,
-    1
-   ],
-   "after": "게시물 대신 정책 메모가 쌓였습니다. 행사 진행자는 당신의 근황을 물었습니다.",
-   "values": {
-    "evidence": 5
-   },
-   "corruption": {
-    "risk": -2
-   }
   }
  ]
 },
@@ -3459,7 +3615,7 @@ const EVENTS = [
  "id": "inside-development",
  "tag": "미공개 정보",
  "title": "발표 전의 정보를\n누구에게 줄까.",
- "text": "가상의 개발 자문회의에 다녀온 지우가 아직 공개되지 않은 계획을 말합니다. 사업가 태오는 그 내용을 자기 투자에 먼저 쓰게 해 달라고 합니다. 그가 도와준 정치 행사가 떠오릅니다.",
+ "text": "가상의 개발 자문회의에 다녀온 지우가 아직 공개되지 않은 계획을 말합니다. 사업가 태오는 그 내용을 자기 투자에 먼저 쓰게 해 달라고 합니다. 정보를 먼저 알려 주면 다음 정치 행사를 돕겠다고 합니다.",
  "corruption": true,
  "choices": [
   {
@@ -3547,6 +3703,31 @@ const EVENTS = [
  "corruption": true,
  "choices": [
   {
+   "title": "행사를 줄이고 제보를 조사한다",
+   "desc": "문제를 확인합니다. 당장의 무대와 인력이 줄어듭니다.",
+   "effect": {
+    "trust": 6,
+    "policy": 4,
+    "recognition": -5,
+    "funds": -7
+   },
+   "groups": [
+    1,
+    -2,
+    4,
+    3
+   ],
+   "after": "조사를 시작했고 행사 규모를 줄였습니다. 서진은 팀을 믿지 못하느냐고 항의했습니다.",
+   "values": {
+    "evidence": 4,
+    "principle": 4
+   },
+   "corruption": {
+    "risk": -7,
+    "leverage": -4
+   }
+  },
+  {
    "title": "지우를 빼고 문제를 덮는다",
    "desc": "당장 팀은 움직입니다. 침묵시킨 사람이 밖에 남습니다.",
    "effect": {
@@ -3572,31 +3753,6 @@ const EVENTS = [
    "followUp": {
     "after": 2,
     "id": "whistleblower-returns"
-   }
-  },
-  {
-   "title": "행사를 줄이고 제보를 조사한다",
-   "desc": "문제를 확인합니다. 당장의 무대와 인력이 줄어듭니다.",
-   "effect": {
-    "trust": 6,
-    "policy": 4,
-    "recognition": -5,
-    "funds": -7
-   },
-   "groups": [
-    1,
-    -2,
-    4,
-    3
-   ],
-   "after": "조사를 시작했고 행사 규모를 줄였습니다. 서진은 팀을 믿지 못하느냐고 항의했습니다.",
-   "values": {
-    "evidence": 4,
-    "principle": 4
-   },
-   "corruption": {
-    "risk": -7,
-    "leverage": -4
    }
   },
   {
@@ -3662,28 +3818,6 @@ const EVENTS = [
    }
   },
   {
-   "title": "자리 약속은 거절한다",
-   "desc": "인사권을 남겨 둡니다. 추천을 받을 길은 좁아집니다.",
-   "effect": {
-    "trust": 5,
-    "network": -8
-   },
-   "groups": [
-    1,
-    -1,
-    3,
-    2
-   ],
-   "after": "서진은 추천 명단을 다시 보겠다고 했습니다. 남은 팀은 직접 지지자를 찾기로 했습니다.",
-   "values": {
-    "principle": 5
-   },
-   "corruption": {
-    "risk": -4,
-    "leverage": -6
-   }
-  },
-  {
    "title": "공개 정책 협약만 제안한다",
    "desc": "협상은 이어갑니다. 개인적인 추천은 기대하기 어렵습니다.",
    "effect": {
@@ -3706,6 +3840,28 @@ const EVENTS = [
     "risk": -3,
     "leverage": -3
    }
+  },
+  {
+   "title": "자리 약속은 거절한다",
+   "desc": "인사권을 남겨 둡니다. 추천을 받을 길은 좁아집니다.",
+   "effect": {
+    "trust": 5,
+    "network": -8
+   },
+   "groups": [
+    1,
+    -1,
+    3,
+    2
+   ],
+   "after": "서진은 추천 명단을 다시 보겠다고 했습니다. 남은 팀은 직접 지지자를 찾기로 했습니다.",
+   "values": {
+    "principle": 5
+   },
+   "corruption": {
+    "risk": -4,
+    "leverage": -6
+   }
   }
  ]
 },
@@ -3717,31 +3873,26 @@ const EVENTS = [
  "corruption": true,
  "choices": [
   {
-   "title": "명단을 그대로 승인한다",
-   "desc": "조직이 남습니다. 허위 정산을 함께 책임지게 됩니다.",
+   "title": "승인을 멈추고 독립 검토를 요청한다",
+   "desc": "책임을 확인합니다. 정상적인 정산도 늦어집니다.",
    "effect": {
-    "network": 10,
-    "funds": 8,
-    "trust": -5
+    "policy": 7,
+    "trust": 3,
+    "recognition": -4,
+    "energy": -7
    },
    "groups": [
-    -1,
-    1,
-    -4,
-    -3
+    0,
+    -2,
+    4,
+    1
    ],
-   "after": "조직은 계속 지원하기로 했습니다. 일하지 않은 사람의 이름 옆에 당신의 승인이 남았습니다.",
+   "after": "지급 검토가 멈췄습니다. 실제로 일한 사람들도 언제 정산되는지 묻기 시작했습니다.",
    "values": {
-    "pragmatism": 5,
-    "ambition": 2
+    "evidence": 5
    },
    "corruption": {
-    "risk": 20,
-    "leverage": 13
-   },
-   "followUp": {
-    "after": 2,
-    "id": "expense-audit"
+    "risk": -8
    }
   },
   {
@@ -3770,26 +3921,31 @@ const EVENTS = [
    }
   },
   {
-   "title": "승인을 멈추고 독립 검토를 요청한다",
-   "desc": "책임을 확인합니다. 정상적인 정산도 늦어집니다.",
+   "title": "명단을 그대로 승인한다",
+   "desc": "조직이 남습니다. 허위 정산을 함께 책임지게 됩니다.",
    "effect": {
-    "policy": 7,
-    "trust": 3,
-    "recognition": -4,
-    "energy": -7
+    "network": 10,
+    "funds": 8,
+    "trust": -5
    },
    "groups": [
-    0,
-    -2,
-    4,
-    1
+    -1,
+    1,
+    -4,
+    -3
    ],
-   "after": "지급 검토가 멈췄습니다. 실제로 일한 사람들도 언제 정산되는지 묻기 시작했습니다.",
+   "after": "조직은 계속 지원하기로 했습니다. 일하지 않은 사람의 이름 옆에 당신의 승인이 남았습니다.",
    "values": {
-    "evidence": 5
+    "pragmatism": 5,
+    "ambition": 2
    },
    "corruption": {
-    "risk": -8
+    "risk": 20,
+    "leverage": 13
+   },
+   "followUp": {
+    "after": 2,
+    "id": "expense-audit"
    }
   }
  ]
@@ -3829,29 +3985,6 @@ const EVENTS = [
    }
   },
   {
-   "title": "제안을 거절하고 쉬는 날을 줄인다",
-   "desc": "대가 없는 시간을 지킵니다. 피로는 쉽게 풀리지 않습니다.",
-   "effect": {
-    "trust": 4,
-    "energy": -3,
-    "network": -3
-   },
-   "groups": [
-    1,
-    0,
-    2,
-    2
-   ],
-   "after": "여행 제안을 거절했습니다. 팀은 가까운 곳에서 반나절만 쉬었습니다.",
-   "values": {
-    "principle": 5
-   },
-   "corruption": {
-    "risk": -3,
-    "leverage": -2
-   }
-  },
-  {
    "title": "사적 일정은 내 부담으로 분리한다",
    "desc": "가족과 시간을 보냅니다. 다른 활동을 줄여 비용을 감당합니다.",
    "effect": {
@@ -3874,6 +4007,29 @@ const EVENTS = [
     "risk": -2,
     "leverage": -3
    }
+  },
+  {
+   "title": "제안을 거절하고 쉬는 날을 줄인다",
+   "desc": "대가 없는 시간을 지킵니다. 피로는 쉽게 풀리지 않습니다.",
+   "effect": {
+    "trust": 4,
+    "energy": -3,
+    "network": -3
+   },
+   "groups": [
+    1,
+    0,
+    2,
+    2
+   ],
+   "after": "여행 제안을 거절했습니다. 팀은 가까운 곳에서 반나절만 쉬었습니다.",
+   "values": {
+    "principle": 5
+   },
+   "corruption": {
+    "risk": -3,
+    "leverage": -2
+   }
   }
  ]
 },
@@ -3881,40 +4037,12 @@ const EVENTS = [
  "id": "erase-record",
  "tag": "은폐 제안",
  "title": "없던 일로\n만들 수 있을까요?",
- "text": "가상의 행사 회의록에 부당한 청탁을 받아들인 대목이 발견됐습니다. 서진은 공개 자료에서 그 부분을 빼자고 합니다. 원래 회의에 참석한 사람들은 내용이 달라졌다는 것을 알 겁니다.",
+ "text": "당신이 검토를 맡은 가상의 행사 회의록에, 서진이 특정 업체의 편의를 봐주자고 한 발언이 적혀 있습니다. 서진은 “결정도 안 된 얘기인데 왜 남깁니까”라며 빼자고 합니다. 공개 전, 원문을 다룰 책임이 당신에게 넘어왔습니다.",
  "corruption": true,
  "choices": [
   {
-   "title": "문제된 내용을 숨긴다",
-   "desc": "당장의 비판은 늦춥니다. 원본을 아는 사람에게 묶입니다.",
-   "effect": {
-    "recognition": 5,
-    "network": 5,
-    "trust": -6
-   },
-   "groups": [
-    -1,
-    1,
-    -4,
-    -4
-   ],
-   "after": "공개 자료에서 문제된 내용이 빠졌습니다. 원본을 가진 사람이 먼저 연락해 왔습니다.",
-   "values": {
-    "pragmatism": 4,
-    "ambition": 3
-   },
-   "corruption": {
-    "risk": 24,
-    "leverage": 20
-   },
-   "followUp": {
-    "after": 2,
-    "id": "whistleblower-returns"
-   }
-  },
-  {
-   "title": "원문을 공개하고 내 책임을 밝힌다",
-   "desc": "추가 은폐를 멈춥니다. 공개된 잘못의 책임은 바로 돌아옵니다.",
+   "title": "원문을 공개하고 청탁과 선을 긋는다",
+   "desc": "기록을 지킵니다. 서진의 조직과 공개적으로 부딪힙니다.",
    "effect": {
     "trust": 3,
     "recognition": -6,
@@ -3926,7 +4054,7 @@ const EVENTS = [
     2,
     1
    ],
-   "after": "원문과 경위를 공개했습니다. 지지자 일부는 해명을 들었고 일부는 떠났습니다.",
+   "after": "원문과 검토 경위를 공개했습니다. 서진은 내부 논의를 밖으로 가져갔다며 지원을 줄였습니다.",
    "values": {
     "principle": 5,
     "initiative": 2
@@ -3960,6 +4088,34 @@ const EVENTS = [
     "risk": -7,
     "leverage": -4
    }
+  },
+  {
+   "title": "서진의 요구대로 발언을 뺀다",
+   "desc": "서진의 신뢰를 얻습니다. 원문을 감춘 책임도 생깁니다.",
+   "effect": {
+    "recognition": 5,
+    "network": 5,
+    "trust": -6
+   },
+   "groups": [
+    -1,
+    1,
+    -4,
+    -4
+   ],
+   "after": "서진의 발언이 공개 자료에서 빠졌습니다. 원본을 보관한 참석자가 왜 지웠는지 묻습니다.",
+   "values": {
+    "pragmatism": 4,
+    "ambition": 3
+   },
+   "corruption": {
+    "risk": 24,
+    "leverage": 20
+   },
+   "followUp": {
+    "after": 2,
+    "id": "whistleblower-returns"
+   }
   }
  ]
 },
@@ -3970,6 +4126,30 @@ const EVENTS = [
  "text": "가상의 연대모임 대표 서진이 행사 자원을 사적으로 썼다는 자료가 나왔습니다. 서진이 빠지면 연대가 흔들립니다. 그는 진상을 확인하기 전에 일단 자신을 믿는다고 말해 달라고 합니다.",
  "corruption": true,
  "choices": [
+  {
+   "title": "확인 전에는 옹호도 단정도 하지 않는다",
+   "desc": "성급한 발언을 피합니다. 양쪽에서 입장을 요구합니다.",
+   "effect": {
+    "policy": 5,
+    "recognition": -4,
+    "network": -3,
+    "energy": -4
+   },
+   "groups": [
+    0,
+    -1,
+    2,
+    0
+   ],
+   "after": "자료를 확인할 때까지 답을 유보했습니다. 지지자와 제보자 모두 언제 답할지 물었습니다.",
+   "values": {
+    "evidence": 5
+   },
+   "corruption": {
+    "risk": -3,
+    "leverage": -2
+   }
+  },
   {
    "title": "서진을 공개적으로 감싼다",
    "desc": "연대가 유지됩니다. 사실과 다른 방어까지 책임질 수 있습니다.",
@@ -4020,30 +4200,6 @@ const EVENTS = [
    "corruption": {
     "risk": -6,
     "leverage": -6
-   }
-  },
-  {
-   "title": "확인 전에는 옹호도 단정도 하지 않는다",
-   "desc": "성급한 발언을 피합니다. 양쪽에서 입장을 요구합니다.",
-   "effect": {
-    "policy": 5,
-    "recognition": -4,
-    "network": -3,
-    "energy": -4
-   },
-   "groups": [
-    0,
-    -1,
-    2,
-    0
-   ],
-   "after": "자료를 확인할 때까지 답을 유보했습니다. 지지자와 제보자 모두 언제 답할지 물었습니다.",
-   "values": {
-    "evidence": 5
-   },
-   "corruption": {
-    "risk": -3,
-    "leverage": -2
    }
   }
  ]
@@ -5487,7 +5643,7 @@ function validMoney(m){try{if(!m||!PLANS[m.plan])return false;for(const k of ['p
 
 return {FINANCE_SOURCES,formatWon,createMoney,depositFor,scenarioLimit,quoteCampaign,setPlan,contribute,fundraise,requestPartySupport,payCampaign,refundRate,settleCampaign,closeFunding,advanceMoney,spendingBonus,validMoney};})();
 const E=(()=>{
-const VERSION=4;
+const VERSION=5;
 const clamp=(v,min=0,max=100)=>Math.min(max,Math.max(min,v));
 const office=id=>OFFICES.find(o=>o.id===id);
 const party=id=>PARTIES.find(p=>p.id===id)||PARTIES[0];
@@ -5548,6 +5704,7 @@ function peersForQuarter(s,limit=3){
 function electionCandidates(s,o,limit){
  if(o.id==='education')return ['가상 교육자 한지수','가상 교육자 윤서진','가상 교육자 김도윤'].slice(0,limit).map(name=>({name,party:'ind'}));
  const available=PEOPLE.filter(p=>p.id!==s.politicianId&&p.name!==s.name&&(o.method==='multi'||p.party==='ind'||p.party!==s.party)),chosen=[],names=new Set(),counts={};
+ if(s.storyChapter?.phase==='ballot'&&s.storyChapter.officeId===o.id)chosen.push({id:null,name:'가상 후보 도윤',party:'ind',storyRival:true});
  const start=available.length?Math.floor(rand(s)*available.length):0;
  for(let i=0;i<available.length&&chosen.length<limit;i++){const p=available[(start+i)%available.length];const allowed=p.party==='ind'||(counts[p.party]||0)<(o.method==='multi'?Math.max(1,o.seats-(p.party===s.party?1:0)):1);if(!names.has(p.name)&&allowed){chosen.push(p);names.add(p.name);counts[p.party]=(counts[p.party]||0)+1;}}
  return chosen;
@@ -5605,10 +5762,11 @@ function identityProfile(s){
 }
 function migrateSave(raw){
  try{
-  if(!raw||![1,2,3,VERSION].includes(raw.version))return null;
+  if(!raw||![1,2,3,4,VERSION].includes(raw.version))return null;
   const s=JSON.parse(JSON.stringify(raw)),wasLegacy=s.version===1,previousVersion=s.version;
   if(previousVersion<3){const previousCap=wasLegacy||s.difficulty==='standard'?3:4;if(!Number.isInteger(s.ap)||s.ap<0||s.ap>previousCap)return null;s.ap=s.ap===previousCap?1:0;s.agenda='field';s.lastAgenda=null;s.storyQueue=[];s.activeFollowUp=null;}
   if(previousVersion<4){s.playMode='story';s.lastStory=null;s.corruption={risk:0,leverage:0,exposures:0,lastExposure:-4};}
+  if(previousVersion<5)s.storyChapter=createChapter(s,false);
   s.version=VERSION;s.difficulty=wasLegacy?'standard':s.difficulty;s.money=s.money??F.createMoney();
   s.values={...emptyValues(),...(s.values||{})};s.choiceCount=s.choiceCount??0;s.choiceRecord=s.choiceRecord??null;
   s.careerStyle=s.careerStyle??'field';s.politicianId=s.politicianId??null;s.storySeed=s.storySeed??s.seed;s.lastOutcome=s.lastOutcome??null;
@@ -5639,7 +5797,7 @@ function createGame(config={}){
  if(person)addLog(s,`${person.name}의 새로운 정치 인생`,'이름과 공개 경력만 참고한 가상 재시작입니다. 나이·능력치·사건은 실제 인물의 평가나 이력이 아닙니다.','life');
  // Start the new tone early without replacing an already visible saved choice.
  prioritizeCorruption(s,1);
- if(s.playMode==='story')assignStoryTarget(s);
+ s.storyChapter=createChapter(s,s.playMode==='story');
  s.eventOffer=buildEventOffer(s);
  s.history.push({tick:0,value:support(s)});return s;
 }
@@ -5668,23 +5826,24 @@ function cancelTarget(s){
  if(s.ended)return {error:'이번 정치 인생은 마무리되었습니다.'};
  if(activeFundingLock(s))return {error:'이 선거를 위해 모금한 후원금이 있습니다. 게임에서는 해당 선거가 끝나기 전까지 출마 취소나 다른 선거로의 변경을 할 수 없습니다.'};
  if(!s.target)return {error:'현재 준비 중인 선거가 없습니다.'};
- s.target=null;releaseGrants(s,'출마 계획을 취소해 이 선거에 배정된 미사용 정당 지원을 회수했습니다.');
+ s.target=null;if(s.storyChapter){s.storyChapter.careerAfter=s.tick+4;if(!['free','recap'].includes(s.storyChapter.phase))finishChapter(s,null,'출마 준비를 직접 멈추었습니다.');}releaseGrants(s,'출마 계획을 취소해 이 선거에 배정된 미사용 정당 지원을 회수했습니다.');
  addLog(s,'출마 준비 해제','다음 도전을 다시 생각해 봅니다.','election');return {ok:true,title:'출마 준비를 해제했습니다. 미사용 정당 지원은 회수됩니다.'};
 }
-function declare(s,id,by=false){
+function declare(s,id,by=false,chapterIntent=false){
  const o=office(id),error=eligibility(s,o);if(error)return {error};
  if(s.office?.id==='president')return {error:'대통령 임기를 마친 뒤 다른 진로를 선택할 수 있습니다.'};
  if(by&&(!s.byElection||s.byElection.tick<s.tick||s.byElection.id!==id))return {error:'현재 열린 재보궐선거가 없습니다.'};
  const tick=by?s.byElection.tick:nextElection(s,o).tick,lock=activeFundingLock(s);
  if(lock&&(lock.officeId!==id||lock.tick!==tick||lock.party!==s.party))return {error:'이미 다른 선거를 위해 후원금을 모금했습니다. 해당 선거가 끝나기 전에는 선거 종류·시점·정당을 바꿀 수 없습니다.'};
  if(s.target&&(s.target.id!==id||s.target.tick!==tick))releaseGrants(s,'도전할 선거가 바뀌어 이전 선거에 배정된 미사용 정당 지원을 회수했습니다.');
+ if(!chapterIntent&&s.storyChapter&&!['free','recap'].includes(s.storyChapter.phase))finishChapter(s,null,'첫 선거의 계획을 직접 바꿨습니다. 새로 정한 출마 계획으로 정치 인생을 이어갑니다.');
  s.target={id,tick,by,announced:s.tick};addLog(s,`${o.name} 도전 선언`,by?'가상 결원에 따른 재보궐선거에 도전합니다.':'본선 전 공천·자격 심사를 거칩니다.','election');return {ok:true,title:'다음 목표가 정해졌습니다.'};
 }
-function switchParty(s,id){if(s.ended)return {error:'이번 정치 인생은 마무리되었습니다.'};if(!PARTIES.some(p=>p.id===id)||s.party===id)return {error:'현재 선택한 정당입니다.'};if(activeFundingLock(s))return {error:'현재 선거를 위해 모금한 후원금이 있습니다. 해당 선거가 끝나기 전에는 정당을 변경할 수 없습니다.'};if(s.office&&office(s.office.id).method.startsWith('pr'))return {error:'비례대표 재직 중 자진 탈당은 의석 상실 문제와 연결됩니다. 이 버전에서는 임기 후 변경할 수 있습니다.'};if(s.office?.id==='education'&&id!=='ind')return {error:'교육감 재직 중에는 정당에 가입할 수 없습니다.'};if(s.ap<1)return {error:'정당 선택에는 활동 1회가 필요합니다.'};s.ap--;releaseGrants(s,'소속 정당이 바뀌어 기존 정당의 미사용 지원을 회수했습니다.');s.party=id;s.nonPartySince=id==='ind'?s.tick:null;s.target=null;affect(s,{network:-6,trust:-2});addLog(s,id==='ind'?'무소속의 길을 선택하다':`${party(id).name}에 합류하다`,'조직을 새롭게 쌓습니다. 기존 출마 계획은 해제되었습니다.','party');return {ok:true,title:'정당 선택을 기록했습니다.'};}
+function switchParty(s,id){if(s.ended)return {error:'이번 정치 인생은 마무리되었습니다.'};if(!PARTIES.some(p=>p.id===id)||s.party===id)return {error:'현재 선택한 정당입니다.'};if(activeFundingLock(s))return {error:'현재 선거를 위해 모금한 후원금이 있습니다. 해당 선거가 끝나기 전에는 정당을 변경할 수 없습니다.'};if(s.office&&office(s.office.id).method.startsWith('pr'))return {error:'비례대표 재직 중 자진 탈당은 의석 상실 문제와 연결됩니다. 이 버전에서는 임기 후 변경할 수 있습니다.'};if(s.office?.id==='education'&&id!=='ind')return {error:'교육감 재직 중에는 정당에 가입할 수 없습니다.'};if(s.ap<1)return {error:'정당 선택에는 활동 1회가 필요합니다.'};s.ap--;releaseGrants(s,'소속 정당이 바뀌어 기존 정당의 미사용 지원을 회수했습니다.');s.party=id;s.nonPartySince=id==='ind'?s.tick:null;s.target=null;if(s.storyChapter&&!['free','recap'].includes(s.storyChapter.phase))finishChapter(s,null,'소속 정당을 직접 바꾸며 첫 선거 계획을 다시 생각하기로 했습니다.');affect(s,{network:-6,trust:-2});addLog(s,id==='ind'?'무소속의 길을 선택하다':`${party(id).name}에 합류하다`,'조직을 새롭게 쌓습니다. 기존 출마 계획은 해제되었습니다.','party');return {ok:true,title:'정당 선택을 기록했습니다.'};}
 function pledge(s,id){if(s.ended)return {error:'이번 정치 인생은 마무리되었습니다.'};if(!POLICIES.some(p=>p.id===id))return {error:'공약을 찾지 못했습니다.'};if(s.pledges.includes(id)){s.pledges=s.pledges.filter(x=>x!==id);return {ok:true,title:'공약에서 제외했습니다.'};}if(s.pledges.length>=3)return {error:'핵심 공약은 세 개까지 선택할 수 있습니다.'};s.pledges.push(id);return {ok:true,title:'나의 공약으로 선택했습니다.'};}
 function startProject(s,id){if(s.ended)return {error:'이번 정치 인생은 마무리되었습니다.'};const p=POLICIES.find(p=>p.id===id);if(!p||!s.office)return {error:'당선 후 정책을 추진할 수 있습니다.'};if(s.ap<1)return {error:'정책 추진에는 활동 1회가 필요합니다.'};if(s.projects.some(x=>x.id===id)||s.completed.includes(id))return {error:'이미 추진 중이거나 완료한 정책입니다.'};if(s.office.id==='education'&&!['school','care','climate','budget'].includes(id))return {error:'교육감의 교육·학예 사무 범위를 벗어나는 정책입니다.'};if(s.budget<p.cost)return {error:'공공 예산이 부족합니다. 다음 분기 예산을 기다리세요.'};s.ap--;s.budget-=p.cost;s.projects.push({id,started:s.tick,due:s.tick+p.quarters,owner:s.office.id});addLog(s,`${p.name} 추진 시작`,`${office(s.office.id).name} 권한에 따라 ${['mayor','governor','president','education'].includes(s.office.id)?'사업 집행':'조례·법안과 예산 협의'}를 시작했습니다.`,'policy');return {ok:true,title:'정책 추진을 시작했습니다.'};}
 function validateSave(s){
- if(!validateBaseSave(s)||!F.validMoney(s.money))return false;
+ if(!validateBaseSave(s)||!F.validMoney(s.money)||!validChapter(s.storyChapter,s))return false;
  const policies=x=>Array.isArray(x)&&x.every(id=>POLICIES.some(p=>p.id===id));
  const effects=x=>x&&typeof x==='object'&&Object.entries(x).every(([k,v])=>['trust','recognition','policy','network','energy','performance','funds','budget'].includes(k)&&Number.isFinite(v));
  const validValues=x=>x&&typeof x==='object'&&Object.entries(x).every(([k,v])=>valueKeys.includes(k)&&Number.isFinite(v)&&v>=0);
@@ -5735,7 +5894,7 @@ function meet(s,idOrName){
 function apportion(weights,total,random=()=>0.5){let sum=weights.reduce((a,b)=>a+b,0);if(!sum)return weights.map(()=>0);const raw=weights.map(w=>w/sum*total),out=raw.map(Math.floor);const order=raw.map((v,i)=>({i,frac:v-Math.floor(v),tie:random()})).sort((a,b)=>b.frac-a.frac||b.tie-a.tie);let left=total-out.reduce((a,b)=>a+b,0);for(let j=0;j<left;j++)out[order[j%order.length].i]++;return out;}
 function allocateNational(votes,districts,random=()=>0.5){const valid=votes.map((v,i)=>v>=3||districts[i]>=5),totalVotes=votes.reduce((a,v,i)=>a+(valid[i]?v:0),0);if(!totalVotes)return votes.map(()=>0);const excluded=254-districts.reduce((a,v,i)=>a+(valid[i]?v:0),0);const linked=votes.map((v,i)=>{if(!valid[i])return 0;const x=((300-excluded)*v/totalVotes-districts[i])/2;return x<1?0:Math.round(x);});let sum=linked.reduce((a,b)=>a+b,0);if(sum>46)return apportion(linked,46,random);const rest=apportion(votes.map((v,i)=>valid[i]?v:0),46-sum,random);return linked.map((v,i)=>v+rest[i]);}
 function allocateLocal(votes,total,random=()=>0.5){return apportion(votes.map(v=>v>=5?v:0),total,random);}
-function strength(s,o){const base=clamp(s.stats.trust*.2+s.stats.recognition*.35+s.stats.network*.2+s.stats.policy*.1+s.groups.reduce((a,b)=>a+b,0)/4*.15+s.stats.performance*.13+(s.party!=='ind'?(firstElectionSupport(s,o)?2:4):0)-o.difficulty+(s.difficulty==='easy'?12:0)+(firstElectionSupport(s,o)?(o.id==='metro-council'?20:10):0)+F.spendingBonus(s,o)-Math.min(8,(s.corruption?.risk||0)*.08)-(s.corruption?.exposures>0&&s.tick-s.corruption.lastExposure<4?10:0),5,95);return base;}
+function strength(s,o){const base=clamp(s.stats.trust*.2+s.stats.recognition*.35+s.stats.network*.2+s.stats.policy*.1+s.groups.reduce((a,b)=>a+b,0)/4*.15+s.stats.performance*.13+(s.party!=='ind'?(firstElectionSupport(s,o)?2:4):0)-o.difficulty+(s.difficulty==='easy'?12:0)+(firstElectionSupport(s,o)?(o.id==='metro-council'?20:10):0)+F.spendingBonus(s,o)+chapterStrength(s,o)-Math.min(8,(s.corruption?.risk||0)*.08)-(s.corruption?.exposures>0&&s.tick-s.corruption.lastExposure<4?10:0),5,95);return base;}
 function nominationChance(s,o){return s.party==='ind'||o.id==='education'||firstElectionSupport(s,o)?100:clamp(52+s.stats.network*.4+s.stats.policy*.2+s.stats.performance*.1-o.level*8+(s.difficulty==='easy'?18:0),s.difficulty==='easy'?65:10,s.difficulty==='easy'?99:95);}
 function election(s){const target=s.target,o=office(target.id),err=eligibility(s,o);let r={id:o.id,name:o.name,tick:s.tick,won:false,reason:'',rows:[],by:target.by};
  if(err){r.reason=err;return finish(r);}
@@ -5746,7 +5905,7 @@ function election(s){const target=s.target,o=office(target.id),err=eligibility(s
  if(o.method.startsWith('pr')){
  const parties=PARTIES.filter(p=>p.id!=='ind');let weights=parties.map(p=>Math.max(.1,p.base+rand(s)*7+(p.id===s.party?(strength(s,o)-40)*(o.id==='council-pr'?1.6:o.id==='metro-pr'?.65:.23):0)));let sum=weights.reduce((a,b)=>a+b,0),votes=weights.map(w=>w/sum*100);let districts=apportion(weights.map(w=>w*w),254,()=>rand(s));let seats=o.method==='pr-national'?allocateNational(votes,districts,()=>rand(s)):allocateLocal(votes,o.seats,()=>rand(s));let pi=parties.findIndex(p=>p.id===s.party);let raw=Math.max(1,Math.ceil((100-s.stats.network*.55-s.stats.policy*.3-s.stats.performance*.2)/(o.id==='council-pr'?28:o.id==='metro-pr'?16:6)));if(s.difficulty==='easy')raw=Math.max(1,raw-2);let rank=s.gender==='female'?(raw%2?raw:raw+1):(raw%2?raw+1:raw);r.rank=rank;r.seats=seats[pi];r.won=rank<=r.seats;r.rows=parties.map((p,i)=>({name:p.name,percent:votes[i],seats:seats[i],color:p.color,player:p.id===s.party}));r.reason=`${party(s.party).name} ${r.seats}석 · 나의 명부 순번 ${rank}번. ${r.won?'당선권에 들었습니다.':'이번에는 당선권에 들지 못했습니다.'}`;
  }else{
- let n=o.method==='multi'?6:4,rawPlayer=Math.max(.1,strength(s,o)+rand(s)*12-6);const candidates=electionCandidates(s,o,n-1);let names=candidates.map(p=>p.name);let rows=[{name:s.name,party:s.party,partyLabel:party(s.party).name,politicianId:s.politicianId,score:rawPlayer,color:'#235d4a',player:true,age:age(s)}];for(let i=1;i<n;i++)rows.push({name:names[i-1]||`가상 후보 ${i}`,politicianId:candidates[i-1]?.id??null,party:candidates[i-1]?.party??'ind',partyLabel:o.id==='education'?'비정당 교육자':party(candidates[i-1]?.party).name,score:34+rand(s)*24,color:['#587baa','#ce6b68','#d4b378','#a893b2','#8ba4a0'][i-1],age:42+i*3});let sum=rows.reduce((a,b)=>a+b.score,0);r.rows=rows.map(x=>({...x,percent:x.score/sum*100})).sort((a,b)=>b.score-a.score||b.age-a.age);r.rank=r.rows.findIndex(x=>x.player)+1;r.won=r.rank<=o.seats;r.reason=`${n}명 중 ${r.rank}위 · ${o.seats}명 선출. ${r.won?'유권자들이 당신을 선택했습니다.':'이번 결과를 다음 출발점으로 삼습니다.'}`;
+ let n=o.method==='multi'?6:4,rawPlayer=Math.max(.1,strength(s,o)+rand(s)*12-6);const candidates=electionCandidates(s,o,n-1);let names=candidates.map(p=>p.name);let rows=[{name:s.name,party:s.party,partyLabel:party(s.party).name,politicianId:s.politicianId,score:rawPlayer,color:'#235d4a',player:true,age:age(s)}];for(let i=1;i<n;i++)rows.push({name:names[i-1]||`가상 후보 ${i}`,politicianId:candidates[i-1]?.id??null,party:candidates[i-1]?.party??'ind',partyLabel:o.id==='education'?'비정당 교육자':party(candidates[i-1]?.party).name,score:34+rand(s)*24+(candidates[i-1]?.storyRival&&s.storyChapter.people.hyeonseok.status==='경쟁 캠프로 이동'?8:0),color:['#587baa','#ce6b68','#d4b378','#a893b2','#8ba4a0'][i-1],age:42+i*3});let sum=rows.reduce((a,b)=>a+b.score,0);r.rows=rows.map(x=>({...x,percent:x.score/sum*100})).sort((a,b)=>b.score-a.score||b.age-a.age);r.rank=r.rows.findIndex(x=>x.player)+1;r.won=r.rank<=o.seats;r.reason=`${n}명 중 ${r.rank}위 · ${o.seats}명 선출. ${r.won?'유권자들이 당신을 선택했습니다.':'이번 결과를 다음 출발점으로 삼습니다.'}`;
  }
  F.settleCampaign(s,o,r,paid.payment);
  if(r.won){let end=target.by?nextElection({...s,tick:s.tick+1},o).tick+1:s.tick+o.term*4+1;s.office={id:o.id,since:s.tick+1,until:end};if(o.limit)s.streak={id:o.id,count:s.streak?.id===o.id&&s.streak.until>=s.tick?s.streak.count+1:1,until:end};if(o.id==='president')s.presidentServed=true;affect(s,{recognition:8,trust:4,network:5});s.budget=Math.max(s.budget,70);s.termPledges=[...s.pledges];}else affect(s,{recognition:3,energy:-5});return finish(r);
@@ -5772,25 +5931,13 @@ function prioritizeCorruption(s,count){
  }
 }
 // Story mode automates routine administration, not money creation or the player's decisions.
-function assignStoryTarget(s){
- if(s.playMode!=='story'||s.ended||s.target||s.office?.id==='president'||s.presidentServed)return;
- const wonIds=new Set(s.results.filter(r=>r.won).map(r=>r.id));
- const local=/세종|제주/.test(s.region)?'metro-council':'council';
- let id=local;
- if(wonIds.has('governor'))id=eligibility(s,office('president'))?'governor':'president';
- else if(wonIds.has('assembly')||wonIds.has('assembly-pr'))id='governor';
- else if(wonIds.size)id='assembly';
- if(eligibility(s,office(id)))id='assembly';
- if(eligibility(s,office(id)))return;
- const by=id==='assembly'&&s.byElection?.id==='assembly'&&s.byElection.tick>=s.tick;
- const r=declare(s,id,by);if(r.ok)addLog(s,'실무진이 다음 선거를 준비합니다.',`${office(id).name} 선거를 준비합니다. 다른 길을 원하면 직접 운영에서 출마 목표를 바꿀 수 있습니다.`,'story');
-}
 function setPlayMode(s,id){
  if(!['story','manual'].includes(id))return {error:'진행 방식을 확인해 주세요.'};
  if(s.playMode===id)return {error:'현재 진행 방식입니다.'};
  s.playMode=id;
+ if(id==='manual'&&s.storyChapter&&!['free','recap'].includes(s.storyChapter.phase)){finishChapter(s,null,'직접 운영으로 전환했습니다. 지금까지의 사람과 약속을 유지하며 출마 준비를 직접 이어갑니다.');s.storyChapter.phase='free';s.storyChapter.lastReaction=null;}
  // Switching only changes the interface and future help. It cannot spend money or replay a choice.
- return {ok:true,title:id==='story'?'이제 사건의 선택에 집중하세요. 선거와 일상 실무는 다음 진행부터 맡습니다.':'직접 운영으로 바꿨습니다. 선거 준비와 정책을 직접 관리합니다.'};
+ return {ok:true,title:id==='story'?'이제 사건의 선택에 집중하세요. 출마와 큰돈 지출은 직접 결정합니다.':'직접 운영으로 바꿨습니다. 선거 준비와 정책을 직접 관리합니다.'};
 }
 function corruptionStatus(s){
  const c=s.corruption||{risk:0,leverage:0,exposures:0};
@@ -5802,29 +5949,9 @@ function corruptionStatus(s){
  return {label:c.exposures?'한숨 돌린 캠프':'아직 조용한 캠프',description:(c.exposures?'현재의 의혹은 줄었지만 공개된 사건은 일대기에 남습니다.':'숨겨 둔 거래와 관계의 빚이 아직 없습니다.')+recent};
 }
 function prepareStory(s){
- const notices=[];assignStoryTarget(s);
- if(s.target){
-  const o=office(s.target.id);let q=campaignQuote(s);
-  if(q.shortfall&&s.money.plan!=='lean'){setCampaignPlan(s,'lean');q=campaignQuote(s);notices.push('실무진이 감당할 수 있도록 선거운동을 소규모로 줄였습니다.');}
-  if(q.shortfall&&s.target.tick-s.tick<=2){
-   // Support and donations stay in the finance module's restricted accounts and action rules.
-   if(s.party!=='ind'&&s.ap>0){const r=requestPartySupport(s);if(r.ok)notices.push(r.title);}
-   q=campaignQuote(s);
-   if(q.shortfall&&s.ap>0){const r=fundraise(s);if(r.ok)notices.push(r.title);}
-   q=campaignQuote(s);
-   if(q.shortfall&&s.money.personalSavings){const r=contributeMoney(s,Math.min(q.shortfall,s.money.personalSavings));if(r.ok)notices.push(r.title);}
-   q=campaignQuote(s);
-   if(q.shortfall)notices.push(`선거 자금이 아직 ${F.formatWon(q.shortfall)} 부족합니다. ${s.target.tick===s.tick?'이번 등록은 어려워도 이야기는 계속되고, 다음 도전을 다시 준비합니다.':'실무진이 다음 분기에도 마련합니다.'}`);
-  }
- }
- if(s.office&&s.ap>0){
-  const eligible=POLICIES.filter(p=>!s.completed.includes(p.id)&&!s.projects.some(x=>x.id===p.id)&&s.budget>=p.cost&&(s.office.id!=='education'||['school','care','climate','budget'].includes(p.id)));
-  const p=eligible.find(p=>s.pledges.includes(p.id))||eligible[0];
-  if(p){const r=startProject(s,p.id);if(r.ok)notices.push(`실무진이 ${p.name} 추진을 시작했습니다.`);}
- }
- // Easy story careers grow through the routine, so no separate training checklist is needed.
- if(s.difficulty==='easy')affect(s,{policy:3,recognition:2,network:2,energy:8});
- return notices;
+ // Only routine recovery is automatic. Candidacy, pledges and money are explicit decisions.
+ if(s.difficulty==='easy')affect(s,{energy:8});
+ return [];
 }
 function resolveCorruption(s){
  const c=s.corruption,notices=[];
@@ -5848,10 +5975,10 @@ function continueStory(s){
  const choiceOutcome=s.lastOutcome?.kind==='choice'?JSON.parse(JSON.stringify(s.lastOutcome)):makeOutcome(s,outcomeSnapshot(s),'choice',chosen?.title||'기록한 선택','이전 기록에서 이어온 선택입니다.',null,chosen?.after||chosen?.desc||'이 선택을 이어갑니다.');
  const routine=s.playMode==='story'?prepareStory(s):[];
  const r=advance(s);if(r.error)return r;
- const notices=[...routine,...r.notices];
+ const notices=[...routine,...r.notices];if(s.storyChapter)s.storyChapter.lastReaction=null;
  if(r.result)notices.push(`${r.result.name} ${r.result.won?'당선':'도전 마무리'}. ${r.result.reason}`);
  s.lastStory={...choiceOutcome,tick,notices};
- if(s.playMode==='story')assignStoryTarget(s);
+
  return {...r,notices,choiceOutcome:s.lastStory};
 }
 function playChoice(s,index){
@@ -5859,12 +5986,215 @@ function playChoice(s,index){
  return continueStory(s);
 }
 
-return {VERSION,clamp,office,party,date,age,dateLabel,rand,addLog,agendaPreview,agendaOptions,setAgenda,affect,support,maxActions,firstElectionSupport,setDifficulty,formatWon,campaignQuote,setCampaignPlan,contributeMoney,fundraise,requestPartySupport,retire,peersForQuarter,currentEvent,choicePreview,identityProfile,migrateSave,createGame,choose,act,nextElection,eligibility,cancelTarget,declare,switchParty,pledge,startProject,validateSave,relationshipCount,meet,allocateNational,allocateLocal,strength,nominationChance,advance,setPlayMode,corruptionStatus,continueStory,playChoice};})();
+// A short opening chapter holds meaningful decisions before the quarterly sandbox.
+// All three recurring characters are fictional and separate from the real-person roster.
+const chapterPhases=['issue','candidacy','budget','offer','callback','campaign','ballot','recap','free'];
+const chapterPeople=[
+ {id:'haerin',name:'해린',role:'첫 동료'},
+ {id:'hyeonseok',name:'현석',role:'조직 책임자'},
+ {id:'doyun',name:'도윤',role:'지역 경쟁자'}
+];
+function createChapter(s,active=false){return {phase:active?'issue':'free',pledge:null,officeId:null,electionTick:null,deal:'none',momentum:0,brokenPromise:'',people:{haerin:{status:'곁을 지키는 중',detail:'주민 앞에서 한 약속을 기억합니다.'},hyeonseok:{status:'지켜보는 중',detail:'사람을 모으는 힘과 조건을 함께 가져옵니다.'},doyun:{status:'경쟁자',detail:'같은 지역에서 지지를 놓고 경쟁합니다.'}},lastReaction:null,recap:null,careerAfter:s.tick+2,gateAfter:active?s.tick:s.tick+1,policyAsked:null,fundingDismissedTick:-1,decisions:[]};}
+function validChapter(c,s){
+ if(!c||!chapterPhases.includes(c.phase)||!(c.pledge===null||POLICIES.some(p=>p.id===c.pledge))||!(c.officeId===null||office(c.officeId)))return false;
+ if(!(c.electionTick===null||Number.isInteger(c.electionTick)&&c.electionTick>=0)||!['none','accepted','declined','open','kept','broken','disclosed'].includes(c.deal))return false;
+ if(!Number.isFinite(c.momentum)||Math.abs(c.momentum)>100||typeof c.brokenPromise!=='string'||!Number.isInteger(c.careerAfter)||!Number.isInteger(c.gateAfter)||!Number.isInteger(c.fundingDismissedTick)||!(c.policyAsked===null||typeof c.policyAsked==='string'))return false;
+ if(!c.people||!chapterPeople.every(p=>typeof c.people[p.id]?.status==='string'&&typeof c.people[p.id]?.detail==='string'))return false;
+ if(!Array.isArray(c.decisions)||c.decisions.length>3000||!c.decisions.every(d=>typeof d.scene==='string'&&typeof d.choice==='string'&&Number.isInteger(d.tick)))return false;
+ if(c.lastReaction){
+  const r=c.lastReaction;
+  if(r.kind!=='choice'||!['title','text','speaker','narrative','context'].every(k=>typeof r[k]==='string')||!(r.delayed===null||typeof r.delayed==='string'))return false;
+  if(!Array.isArray(r.changes)||!r.changes.every(x=>x&&Object.hasOwn(STAT_NAMES,x.key)&&x.label===STAT_NAMES[x.key]&&['before','after','delta'].every(k=>Number.isFinite(x[k]))))return false;
+  if(!Array.isArray(r.groups)||!r.groups.every(x=>x&&GROUPS.some(g=>g.name===x.name)&&['before','after','delta'].every(k=>Number.isFinite(x[k]))))return false;
+ }
+ if(s&&['budget','offer','callback','campaign','ballot'].includes(c.phase)&&(!s.target||!c.officeId||c.electionTick===null||s.target.id!==c.officeId||s.target.tick!==c.electionTick||c.electionTick<s.tick))return false;
+ if(c.recap&&(!['title','election','brokenPromise','nickname','summary'].every(k=>typeof c.recap[k]==='string')||!Array.isArray(c.recap.allies)||!Array.isArray(c.recap.debts)||!c.recap.allies.every(v=>typeof v==='string')||!c.recap.debts.every(v=>typeof v==='string')||![null,true,false].includes(c.recap.won)))return false;
+ if(c.recap){const r=c.recap;if(r.electionId!==undefined&&r.electionId!==null&&!office(r.electionId))return false;if(r.electionTick!==undefined&&r.electionTick!==null&&(!Number.isInteger(r.electionTick)||r.electionTick<0||(s&&r.electionTick>s.tick)))return false;}
+ return true;
+}
+function chapterStrength(s,o){const c=s.storyChapter;return s.playMode==='story'&&c?.phase==='ballot'&&c.electionTick===s.tick&&c.officeId===o.id?clamp(c.momentum-24,-40,25):0;}
+function chapterPerson(s,id,status,detail){s.storyChapter.people[id]={status,detail};}
+function chapterRecord(s,scene,c,text,speaker='캠프',effect={},values={}){
+ const before=outcomeSnapshot(s);affect(s,effect);
+ s.choiceCount++;for(const [key,value]of Object.entries(values))s.values[key]=(s.values[key]||0)+value;
+ const outcome=makeOutcome(s,before,'choice',c.title,'당신의 선택이 남긴 반응입니다.',null,text);
+ s.storyChapter.lastReaction={...outcome,text,speaker};
+ s.storyChapter.decisions.push({scene:scene.id,choice:c.key,tick:s.tick});
+ addLog(s,c.title,text,'choice');s.logs[0].values={...values};
+ return {ok:true,title:c.title,outcome};
+}
+function finishChapter(s,result,summary){
+ const c=s.storyChapter,allies=[];if(!['떠난 동료','거리를 둔 동료'].includes(c.people.haerin.status))allies.push('해린');if(['합류한 조직','거래를 지킨 조직'].includes(c.people.hyeonseok.status))allies.push('현석');
+ c.phase='recap';c.recap={title:result?(result.won?'첫 의석, 남은 얼굴들':'첫 패배, 남은 얼굴들'):'이번에는 출마하지 않습니다',won:result?.won??null,election:result?result.name:'출마 유예',electionId:result?.id??null,electionTick:result?.tick??null,allies,debts:['accepted','kept'].includes(c.deal)?['현석이 다음 인사에도 목소리를 내려 합니다.']:[],brokenPromise:c.brokenPromise||'버린 약속 없음',nickname:identityProfile(s).title,summary};
+ c.careerAfter=s.tick+4;return c.recap;
+}
+function campSpeaker(s){return s.storyChapter.people.haerin.status==='떠난 동료'?'캠프':'해린';}
+function localChapterOffice(s){return /세종|제주/.test(s.region)?'metro-council':'council';}
+function recommendedOffice(s){
+ const wonIds=new Set(s.results.filter(r=>r.won).map(r=>r.id));let id=localChapterOffice(s);
+ if(wonIds.has('governor'))id=eligibility(s,office('president'))?'assembly':'president';
+ else if(wonIds.has('assembly')||wonIds.has('assembly-pr'))id='governor';else if(wonIds.size)id='assembly';
+ return eligibility(s,office(id))?null:id;
+}
+function sceneData(s,id,title,text,choices,speaker='해린',tag='첫 선거',step){
+ const current=step??Math.max(1,chapterPhases.indexOf(s.storyChapter.phase)+1);
+ return {id,tag,title,text,speaker,progress:id.startsWith('chapter-')?{current:Math.min(7,current),total:7,label:`첫 선거 · ${Math.min(7,current)}/7`}:null,choices};
+}
+const sceneChoice=(key,title,desc)=>({key,title,desc});
+function storyScene(s){
+ if(s.playMode!=='story'||s.ended)return null;
+ const c=s.storyChapter;if(!c)return null;
+ const chosen=POLICIES.find(p=>p.id===c.pledge),local=office(c.officeId||localChapterOffice(s));
+ if(c.phase==='issue')return sceneData(s,'chapter-issue','첫 명함에 무엇을 쓰겠습니까?','주민 간담회가 끝났습니다. 해린이 빈 명함을 내밉니다. “다 넣으면 아무것도 약속하지 않은 거예요. 하나만 고르죠.”',[
+  sceneChoice('care','아이 맡길 곳부터 만든다','돌봄을 기다리는 가족들의 목소리를 대표한다.'),
+  sceneChoice('transit','매일 다니는 길부터 바꾼다','버스와 통학길의 불편을 첫 약속으로 삼는다.'),
+  sceneChoice('budget','예산이 새는 곳부터 연다','누가 어디에 돈을 쓰는지 공개하겠다고 약속한다.')]);
+ if(c.phase==='candidacy')return sceneData(s,'chapter-candidacy','욕은 해 봤습니다. 출마는요?',`이번에는 ${local.name} 선거입니다. 해린이 묻습니다. “${chosen?.name||'우리 약속'}, 직접 책임질 건가요?”`,[
+  sceneChoice('run',`${local.name}에 출마한다`,'내 이름을 걸고 첫 선거를 준비한다. 다음에 비용을 확인한다.'),
+  sceneChoice('wait','이번 선거는 건너뛴다','주민 활동을 더 하며 출마 시점을 내가 정한다.')]);
+ if(c.phase==='budget'){
+  const plans=['lean','standard'].map(plan=>({plan,q:campaignQuote(s,c.officeId,plan)})).filter(({q})=>q.shortfall<=s.money.personalSavings);
+  return sceneData(s,'chapter-budget','현수막보다 먼저 온 견적서',`선거 계좌 ${formatWon(s.money.campaignCash)}, 남은 개인 저축 ${formatWon(s.money.personalSavings)}. 기탁금과 선거운동비를 포함한 견적입니다. 반환·보전은 선거가 끝난 뒤 정산합니다.`,[
+   ...plans.map(({plan,q})=>sceneChoice(plan,plan==='lean'?`작게 치른다 · 총 ${formatWon(q.total)}`:`규모를 늘린다 · 총 ${formatWon(q.total)}`,q.shortfall?`선택하면 개인 저축 ${formatWon(q.shortfall)}을 선거 계좌로 옮긴다.`:'추가 개인 출연 없이 현재 선거 계좌에서 부담한다.')),
+   ...(plans.length<2&&s.ap>0&&!s.actions.includes('fundraise')?[sceneChoice('raise','공개 후원으로 준비한다','등록 후원회 모금을 선택한다. 부족한 돈을 몰래 채우지 않는다.')]:[]),
+   sceneChoice('withdraw','이번 출마를 접는다','지금 감당하기 어렵다면 돈을 더 쓰기 전에 계획을 거둔다.')
+  ],'해린');
+ }
+ if(c.phase==='offer')return sceneData(s,'chapter-offer','의자는 채워 드리죠','조직 책임자 현석이 찾아왔습니다. “유세장에 사람은 제가 채우죠. 대신 당선되면 제 사람 한 명, 캠프 자리는 보장해 주시죠.”',[
+  sceneChoice('decline','사람보다 조건이 걸린다','그 제안을 거절하고 지금의 동료들과 간다.'),
+  sceneChoice('accept','일단 이기고 생각한다','현석의 조직을 받는다. 대신 인사 약속이 남는다.'),
+  sceneChoice('open','누구든 공개 모집을 거친다','도움은 받되 자리를 보장하지 않겠다고 선을 긋는다.')],'현석');
+ if(c.phase==='callback'&&c.deal==='accepted')return sceneData(s,'chapter-callback','약속한 자리는 제 조카 겁니다','현석이 이름 한 장을 놓고 갑니다. 공고도 내지 않은 자리입니다. 해린이 묻습니다. “처음부터 내정된 거였어요?”',[
+  sceneChoice('keep','약속했으니 자리를 준다','현석의 조직을 지킨다. 해린은 이 캠프에 남지 않겠다고 한다.'),
+  sceneChoice('break','약속을 깨고 공개 모집한다','현석은 조직을 빼 경쟁 후보에게 가겠다고 한다.'),
+  sceneChoice('disclose','거래 제안부터 직접 공개한다','내가 수락했던 사실까지 말한다. 선거 직전 해명이 필요해진다.')],'해린');
+ if(c.phase==='callback')return sceneData(s,'chapter-callback','빈 의자를 누가 채울까요?',c.deal==='open'?'현석은 조건 없는 지원까지 약속하지는 않았습니다. 해린이 주민들에게 직접 연락하자고 합니다.':'현석이 빠진 유세장은 작습니다. 해린이 빈 의자를 접으며 말합니다. “작아도 우리 얘기를 하죠.”',[
+  sceneChoice('neighbors','약속과 관련된 주민부터 만난다',`${chosen?.name||'첫 약속'}이 필요한 사람들의 이야기를 모은다.`),
+  sceneChoice('noise','크게 싸워서라도 주목받는다','경쟁 후보 도윤에게 공개 논쟁을 제안한다.')],'해린');
+ if(c.phase==='campaign')return sceneData(s,'chapter-campaign','마지막 마이크',`가상 경쟁자 도윤이 묻습니다. “${c.deal==='kept'?'자리부터 나눠 가진 캠프를':c.deal==='broken'?'함께 온 사람도 떠난 캠프를':c.deal==='disclosed'?'거래를 수락했던 후보를':'실적도 없는 신인을'} 왜 믿어야 합니까?” 카메라가 당신에게 돌아옵니다.`,[
+  sceneChoice('promise','처음 한 약속으로 답한다',`${chosen?.name||'대표 공약'}을 어떻게 실천할지 설명한다.`),
+  sceneChoice('attack','도윤의 약점을 물고 늘어진다','내 질문에 먼저 답하라며 논쟁의 방향을 돌린다.'),
+  sceneChoice('account','내 선택의 대가부터 인정한다','남은 거래와 떠난 사람까지 내 책임으로 이야기한다.')],'도윤');
+ if(c.phase==='ballot')return sceneData(s,'chapter-ballot','이제 유권자가 고릅니다',`${local.name} ${local.seats}명을 뽑는 선거. 당신의 약속과 캠프의 선택이 표로 돌아옵니다. 결과가 좋아도 떠난 사람은 자동으로 돌아오지 않습니다.`,[sceneChoice('count','개표 결과 보기','이번 선거를 마무리하고 내 선택이 남긴 얼굴들을 확인한다.')],'유권자');
+ if(c.phase==='recap')return sceneData(s,'chapter-recap',c.recap?.title||'첫 장을 마쳤습니다',c.recap?.summary||'첫 선택을 돌아봅니다.',[sceneChoice('continue','이 정치 인생을 이어간다','대표 공약과 다음 출마는 직접 결정한다.'),sceneChoice('retire','여기까지 나의 일대기로 남긴다','지금의 사람과 약속, 별명을 기록하고 이번 인생을 마친다.')],'나의 기록','첫 장의 끝',7);
+ if(c.phase!=='free'||s.eventResolved||s.tick<c.gateAfter)return null;
+ // Existing careers receive small decision gates instead of automatic management.
+ if(s.office&&s.ap>0&&c.policyAsked!==`${s.office.id}:${s.office.since}`){
+  const options=POLICIES.filter(p=>!s.completed.includes(p.id)&&!s.projects.some(x=>x.id===p.id)&&p.cost<=s.budget&&(s.office.id!=='education'||['school','care','climate','budget'].includes(p.id))).sort((a,b)=>Number(s.pledges.includes(b.id))-Number(s.pledges.includes(a.id))).slice(0,2);
+  if(options.length)return sceneData(s,'career-policy','첫 결재, 무엇부터 바꿀까요?','모든 일을 동시에 할 수는 없습니다. 이번 임기에 먼저 추진할 일을 직접 고르세요.',[...options.map(p=>sceneChoice(p.id,p.name,s.pledges.includes(p.id)?'유권자에게 했던 약속부터 추진한다.':p.desc)),sceneChoice('later','아직 시작하지 않는다','다음 사건을 보고 결정한다. 정책 메뉴에서 나중에 선택할 수 있다.')],campSpeaker(s),'임기의 선택');
+ }
+ if(s.target&&s.target.tick-s.tick<=2&&c.fundingDismissedTick!==s.tick){
+  const q=campaignQuote(s);if(q.shortfall){const options=[];
+   if(q.shortfall<=s.money.personalSavings)options.push(sceneChoice('personal',`내 저축 ${formatWon(q.shortfall)}을 투입한다`,'이 금액을 개인 계좌에서 선거 계좌로 옮긴다.'));
+   if(s.money.plan!=='lean'&&campaignQuote(s,s.target.id,'lean').shortfall<q.shortfall)options.push(sceneChoice('lean','선거 규모를 줄인다',`소규모 총비용 ${formatWon(campaignQuote(s,s.target.id,'lean').total)}. 추가 돈은 자동으로 옮기지 않는다.`));
+   else if(s.ap>0&&!s.actions.includes('fundraise')&&q.donationCap>(s.money.annualRaised[String(date(s).year)]||0))options.push(sceneChoice('raise','공개 후원을 모은다','등록 후원회 모금으로 준비한다. 이 돈은 개인 재산이 되지 않는다.'));
+   options.push(sceneChoice('later','이번 분기는 더 지켜본다',`현재 ${formatWon(q.shortfall)} 부족하다. 선거 때까지 부족하면 등록하지 못한다.`));
+   return sceneData(s,'career-funding','출마 비용을 어떻게 마련할까요?',`${office(s.target.id).name} 준비에 ${formatWon(q.shortfall)}이 더 필요합니다. 개인 저축은 ${formatWon(s.money.personalSavings)}입니다.`,options.slice(0,3),campSpeaker(s),'자금 결정');
+  }
+ }
+ if(!s.target&&s.office?.id!=='president'&&s.tick>=c.careerAfter){
+  if(s.presidentServed&&!s.office)return sceneData(s,'career-finale','대통령의 임기가 끝났습니다','다시 대통령에 출마할 수는 없습니다. 직함 이후의 정치 인생을 직접 정하세요.',[sceneChoice('stay','시민으로 이야기를 이어간다','선거 목표 없이 사회의 문제에 의견을 낸다.'),sceneChoice('retire','나의 일대기를 완성한다','사람과 약속, 선택의 기록으로 이번 인생을 마친다.')],'나의 기록','임기 이후');
+  const id=recommendedOffice(s),options=[];
+  if(id)options.push(sceneChoice(id,`${office(id).name}에 도전한다`,'출마를 직접 선언한다. 필요한 자금은 별도로 확인한다.'));
+  if(s.office&&s.office.id!==id&&!eligibility(s,office(s.office.id)))options.push(sceneChoice(s.office.id,`${office(s.office.id).name} 재선을 준비한다`,'지금 맡은 지역과 약속을 더 오래 책임진다.'));
+  options.push(sceneChoice('wait',s.office?'이번 임기에 집중한다':'지금은 출마하지 않는다','일 년 동안 새 출마 제안을 미루고 현재의 이야기를 이어간다.'));
+  if(options.length<3)options.push(sceneChoice('retire','여기까지 회고한다','이번 정치 인생을 마친다.'));
+  return sceneData(s,'career-goal','다음 자리는, 내 선택입니다','캠프가 자동으로 다음 선거를 정하지 않습니다. 어디에 시간을 쓸지 직접 고르세요.',options,campSpeaker(s),'다음 목표');
+ }
+ return null;
+}
+function storySummary(s){
+ const c=s.storyChapter||createChapter(s,false),scene=storyScene(s),p=POLICIES.find(p=>p.id===(c.pledge||s.pledges[0]));
+ const goal=s.ended?'이 정치 인생을 마쳤습니다':scene?.id.startsWith('chapter-')?'첫 선거에서 나의 선택 확인하기':s.target?`${office(s.target.id).name} 선거 준비`:s.office?`${office(s.office.id).name}로 약속 실천하기`:s.presidentServed?'직함 이후의 정치 인생':'이번 사건에서 내 입장 정하기';
+ return {goal,chapterTitle:c.phase==='free'?'이어지는 정치 인생':'첫 선거',progress:scene?.id.startsWith('chapter-')?scene.progress:null,people:chapterPeople.map(p=>({...p,...c.people[p.id]})),pledge:p?.name||'아직 정하지 않은 첫 약속',recap:c.recap,reaction:c.lastReaction};
+}
+function playScene(s,index,expectedId){
+ const scene=storyScene(s),choice=scene?.choices[index];if(!scene||!choice||(expectedId&&scene.id!==expectedId))return {error:'현재 선택을 다시 확인해 주세요.'};
+ const c=s.storyChapter,key=choice.key;
+ if(['budget','offer','callback','campaign','ballot'].includes(c.phase)&&(!s.target||s.target.id!==c.officeId||s.target.tick!==c.electionTick))return {error:'첫 선거의 출마 계획이 바뀌었습니다. 출마 계획을 다시 확인해 주세요.'};
+ if(scene.id==='chapter-issue'){
+  c.pledge=key;s.pledges=[key];c.phase='candidacy';c.momentum+=2;
+  return chapterRecord(s,scene,choice,`해린이 명함에 ${POLICIES.find(p=>p.id===key).name}을 적었습니다. “이 말, 나중에도 기억할게요.”`,'해린',{trust:2},{listening:3});
+ }
+ if(scene.id==='chapter-candidacy'){
+  if(key==='wait'){const r=chapterRecord(s,scene,choice,'해린이 명함을 접어 보관합니다. “출마하지 않아도 이 약속은 같이 지켜요.”','해린',{trust:2},{principle:2});finishChapter(s,null,'이번 선거를 건너뛰었습니다. 해린은 주민 활동을 함께 이어갑니다. 출마 시점은 다시 직접 정할 수 있습니다.');return r;}
+  const id=localChapterOffice(s),r=declare(s,id,false,true);if(r.error)return r;c.officeId=id;c.electionTick=s.target.tick;c.phase='budget';
+  return chapterRecord(s,scene,choice,`${office(id).name} 출마를 선언했습니다. 다음 결정은 실제로 감당할 선거비용입니다.`,'해린',{}, {ambition:3});
+ }
+ if(scene.id==='chapter-budget'){
+  if(key==='withdraw')return cancelTarget(s);
+  if(key==='raise'){const r=fundraise(s);if(r.error)return r;setCampaignPlan(s,'lean');c.phase='offer';return chapterRecord(s,scene,choice,r.title,'해린',{trust:2},{cooperation:2});}
+  const q=campaignQuote(s,c.officeId,key);if(!q||q.shortfall>s.money.personalSavings)return {error:'개인 저축이 부족합니다. 감당할 수 있는 규모를 다시 골라 주세요.'};
+  setCampaignPlan(s,key);if(q.shortfall){const r=contributeMoney(s,q.shortfall);if(r.error)return r;}c.phase='offer';
+  return chapterRecord(s,scene,choice,`${q.planName} 선거운동을 골랐습니다. ${q.shortfall?`개인 저축 ${formatWon(q.shortfall)}을 출연했습니다.`:'남은 개인 저축은 그대로 지켰습니다.'} 총비용 ${formatWon(q.total)}은 후보 등록 때 집행합니다.`,'해린',{},key==='lean'?{pragmatism:2}:{initiative:2});
+ }
+ if(scene.id==='chapter-offer'){
+  c.phase='callback';c.deal=key==='accept'?'accepted':key==='open'?'open':'declined';
+  if(key==='accept'){c.momentum+=14;s.corruption.risk=clamp(s.corruption.risk+20);s.corruption.leverage=clamp(s.corruption.leverage+30);chapterPerson(s,'hyeonseok','합류한 조직','유세 인력을 붙였습니다. 당선 뒤 인사 한 자리를 요구합니다.');return chapterRecord(s,scene,choice,'유세장의 빈 의자가 채워졌습니다. 현석은 인사 약속을 확인했고, 해린은 대답 없이 명함을 내려놓았습니다.','현석',{network:8,recognition:3},{ambition:4,pragmatism:3});}
+  chapterPerson(s,'hyeonseok',key==='open'?'조건을 따지는 조직':'거절한 조직',key==='open'?'공개 모집 조건을 듣고 지원을 보류했습니다.':'인사 보장을 거절하자 조직을 보내지 않았습니다.');
+  return chapterRecord(s,scene,choice,key==='open'?'“자리를 약속하지 않으면 사람도 확답 못 하죠.” 현석이 돌아갔습니다. 해린은 공개 모집 문구를 적었습니다.':'현석이 돌아갔습니다. 해린이 작게 웃습니다. “의자는 적어도 무슨 약속인지는 알겠네요.”','해린',{trust:3},{principle:4});
+ }
+ if(scene.id==='chapter-callback'){
+  c.phase='campaign';
+  if(c.deal==='accepted'){
+   if(key==='keep'){c.deal='kept';c.momentum-=5;c.brokenPromise='캠프 인사를 공개 모집하겠다는 신뢰';s.corruption.risk=clamp(s.corruption.risk+35);s.corruption.leverage=clamp(s.corruption.leverage+15);chapterPerson(s,'haerin','떠난 동료','내정 인사를 밀어붙이자 명함을 놓고 캠프를 떠났습니다.');chapterPerson(s,'hyeonseok','거래를 지킨 조직','조카를 캠프에 들였고 다음 인사에도 발언권을 요구합니다.');return chapterRecord(s,scene,choice,'해린이 명함을 책상에 놓았습니다. “당신이 지킬 사람은 정해졌네요.” 현석의 조직은 남았지만 첫 동료는 떠났습니다.','해린',{trust:-9,network:2},{ambition:3,pragmatism:3});}
+   c.momentum-=key==='break'?14:18;s.corruption.risk=clamp(s.corruption.risk-(key==='break'?5:15));s.corruption.leverage=clamp(s.corruption.leverage-20);c.deal=key==='break'?'broken':'disclosed';
+   chapterPerson(s,'hyeonseok','경쟁 캠프로 이동','인사 거래를 거둬들이자 도윤에게 조직을 보냈습니다.');chapterPerson(s,'doyun','현석과 손잡은 경쟁자','현석의 조직을 받아 마지막 유세를 키웠습니다.');chapterPerson(s,'haerin',key==='break'?'남은 동료':'다시 손잡은 동료',key==='break'?'거래를 철회한 선택을 지켜보며 남았습니다.':'수락 사실까지 밝힌 책임을 보고 다시 함께하기로 했습니다.');
+   return chapterRecord(s,scene,choice,key==='break'?'현석이 조직을 빼 도윤에게 갔습니다. 해린은 남았지만 유세장은 다시 작아졌습니다.':'수락했던 사실까지 공개했습니다. 도윤은 해명을 요구했고, 해린은 옆에 섰습니다. 당장의 표심은 흔들립니다.','해린',{network:-8,trust:key==='break'?2:-3},{principle:4,evidence:key==='disclose'?3:1});
+  }
+  if(key==='neighbors'){c.momentum+=8;chapterPerson(s,'haerin','주민을 모은 동료','대표 공약을 필요로 하는 주민들의 얼굴을 유세장에 모았습니다.');return chapterRecord(s,scene,choice,'해린이 주민들을 한 명씩 소개합니다. 빈 의자에 이름이 생겼습니다. 사람들은 내 약속을 듣고 왔습니다.','해린',{trust:4,recognition:3},{listening:4,cooperation:2});}
+  c.momentum+=2;chapterPerson(s,'doyun','공개 논쟁 상대','내 공개 도전을 받아 마지막 토론에 나섭니다.');return chapterRecord(s,scene,choice,'도윤이 토론 제안을 받았습니다. 관심은 커졌지만, 주민들 사이에서는 싸움만 남는 것 아니냐는 말도 나옵니다.','도윤',{recognition:7,trust:-3},{initiative:4});
+ }
+ if(scene.id==='chapter-campaign'){
+  c.phase='ballot';
+  if(key==='promise'){c.momentum+=8;return chapterRecord(s,scene,choice,`${POLICIES.find(p=>p.id===c.pledge).name}을 설명했습니다. 처음 만났던 주민들이 내 약속을 다시 들었습니다.`,'유권자',{policy:4,trust:3},{evidence:3,listening:3});}
+  if(key==='attack'){c.momentum-=9;c.brokenPromise=c.brokenPromise||'첫 공약을 설명할 마지막 기회';return chapterRecord(s,scene,choice,'논쟁은 커졌지만 내 공약을 설명할 시간은 사라졌습니다. 도윤은 “질문을 피했다”고 받아쳤습니다.','도윤',{recognition:5,trust:-6},{initiative:3,ambition:2});}
+  c.momentum+=c.deal==='kept'?-3:4;if(c.deal==='kept'){s.corruption.risk=clamp(s.corruption.risk-10);chapterPerson(s,'haerin','떠난 동료','책임 인정은 들었지만 캠프로 돌아오지는 않았습니다.');}
+  return chapterRecord(s,scene,choice,c.deal==='kept'?'거래를 내 책임으로 인정했습니다. 해린은 돌아오지 않았고, 유권자들은 이후 행동을 보겠다고 합니다.':'도움을 구했던 과정과 양보한 것을 설명했습니다. 당장 모두가 믿지는 않아도 무엇을 선택했는지는 남았습니다.','유권자',{trust:2},{principle:3,evidence:2});
+ }
+ if(scene.id==='chapter-ballot'){
+  chapterRecord(s,scene,choice,'이제 내 선택을 유권자에게 맡깁니다.','유권자');let result=null,notices=[];
+  // The chapter occurs before the first ordinary local election; settle through the same engine.
+  if(s.target&&s.target.id===c.officeId&&s.target.tick===c.electionTick){
+   while(s.tick<=c.electionTick&&!s.ended){s.eventResolved=true;const r=advance(s);if(r.error)return r;if(r.result)result=r.result;notices.push(...r.notices);}
+  }
+  const summary=result?`${result.won?'첫 의석을 얻었습니다.':'첫 선거에서 의석을 얻지 못했습니다.'} ${c.people.haerin.status==='떠난 동료'?'해린은 떠났고 현석과의 거래가 남았습니다.':c.people.hyeonseok.status==='경쟁 캠프로 이동'?'해린은 남았고 현석은 경쟁 캠프로 갔습니다.':'함께 남은 사람들과 첫 약속을 돌아봅니다.'}`:'출마 계획이 바뀌어 이번 장의 선거는 치르지 않았습니다.';
+  finishChapter(s,result,summary);return {ok:true,title:'첫 선거의 결과를 확인합니다.',result,notices};
+ }
+ if(scene.id==='chapter-recap'){
+  if(key==='retire')return retire(s);
+  c.phase='free';c.lastReaction=null;c.careerAfter=Math.max(c.careerAfter,s.tick+2);return {ok:true,title:'이제 다음 선택도 직접 결정합니다.'};
+ }
+ if(scene.id==='career-policy'){
+  if(key!=='later'){const r=startProject(s,key);if(r.error)return r;if(!s.pledges.includes(key)&&s.pledges.length<3)s.pledges.push(key);}
+  c.policyAsked=`${s.office.id}:${s.office.since}`;return chapterRecord(s,scene,choice,key==='later'?'첫 정책 결정을 미뤘습니다. 캠프가 대신 고르지 않습니다.':`${POLICIES.find(p=>p.id===key).name} 추진을 시작했습니다.`, campSpeaker(s));
+ }
+ if(scene.id==='career-funding'){
+  if(key==='personal'){const q=campaignQuote(s);const r=contributeMoney(s,q.shortfall);if(r.error)return r;return chapterRecord(s,scene,choice,r.title,campSpeaker(s));}
+  if(key==='lean'){setCampaignPlan(s,'lean');return chapterRecord(s,scene,choice,'소규모 선거운동으로 줄였습니다. 부족한 돈이 있으면 다시 직접 결정합니다.',campSpeaker(s));}
+  if(key==='raise'){const r=fundraise(s);if(r.error)return r;return chapterRecord(s,scene,choice,r.title,campSpeaker(s));}
+  c.fundingDismissedTick=s.tick;return chapterRecord(s,scene,choice,'이번 분기에는 추가 돈을 투입하지 않았습니다. 부족한 채 선거를 맞으면 등록할 수 없습니다.',campSpeaker(s));
+ }
+ if(scene.id==='career-goal'){
+  if(key==='retire')return retire(s);
+  if(key==='wait'){c.careerAfter=s.tick+4;return chapterRecord(s,scene,choice,'새 출마 제안을 일 년 뒤로 미뤘습니다. 지금의 약속과 사건에 집중합니다.',campSpeaker(s));}
+  const r=declare(s,key);if(r.error)return r;c.careerAfter=s.tick+4;return chapterRecord(s,scene,choice,`${office(key).name} 도전을 내 결정으로 시작했습니다.`,campSpeaker(s));
+ }
+ if(scene.id==='career-finale'){
+  if(key==='retire')return retire(s);
+  c.careerAfter=s.tick+4;return chapterRecord(s,scene,choice,'다음 직함 대신 시민으로 이야기를 이어갑니다. 새 선거는 자동으로 준비하지 않습니다.','나의 기록');
+ }
+ return {error:'선택을 확인해 주세요.'};
+}
+
+return {VERSION,clamp,office,party,date,age,dateLabel,rand,addLog,agendaPreview,agendaOptions,setAgenda,affect,support,maxActions,firstElectionSupport,setDifficulty,formatWon,campaignQuote,setCampaignPlan,contributeMoney,fundraise,requestPartySupport,retire,peersForQuarter,currentEvent,choicePreview,identityProfile,migrateSave,createGame,choose,act,nextElection,eligibility,cancelTarget,declare,switchParty,pledge,startProject,validateSave,relationshipCount,meet,allocateNational,allocateLocal,strength,nominationChance,advance,setPlayMode,corruptionStatus,continueStory,playChoice,storyScene,storySummary,playScene};})();
 const KEY='minui-save-v1', ARCHIVE_KEY='minui-career-archive-v1', $=q=>document.querySelector(q), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let game,tab='home',filter='all',storageOk=true,toastTimer,saveBlocked=false,originalSave='',loadMessage='';
 let creator=null,peopleQuery='',peopleParty='all',peopleLimit=24;
-let careerArchives=[],archiveBlocked=false,archiveWarning='';
+let careerArchives=[],archiveBlocked=false,archiveWarning='',welcome=false,lastDecisionAt=-Infinity;
+const decisionToken=()=>`${game.tick}:${game.choiceCount}:${E.storyScene?.(game)?.id||'event'}`;
 try{const raw=localStorage.getItem(KEY);if(raw){originalSave=raw;try{const parsed=JSON.parse(raw);game=E.migrateSave(parsed);if(!game)throw Error();}catch{saveBlocked=true;storageOk=false;loadMessage='기존 저장 기록을 읽지 못했습니다. 원본은 덮어쓰지 않고 보관 중입니다.';}}}catch{storageOk=false;}
+welcome=!game&&!saveBlocked;
 game??=E.createGame();
 try{const raw=localStorage.getItem(ARCHIVE_KEY);if(raw){const parsed=JSON.parse(raw);if(!Array.isArray(parsed)||!parsed.every(validCareerSummary))throw Error();careerArchives=parsed.slice(0,5);}}catch{archiveBlocked=true;archiveWarning='이전 인생 요약을 읽지 못했습니다. 원본은 유지하며 새 회고는 현재 화면에서만 보관합니다.';}
 
@@ -5886,16 +6216,16 @@ const textBtn=(label,action,value='')=>`<button type="button" class="text-btn" d
 const badge=(text,cls='')=>`<span class="badge ${cls}">${text}</span>`;
 const tabs=[['home','나의 집무실','home'],['elections','선거와 도전','ballot'],['policies','정책과 공약','book'],['people','정당과 인물','users'],['history','나의 일대기','clock'],['guide','플레이 가이드','help']];
 const shortDate=t=>`${2026+Math.floor(t/4)}. ${String((t%4)*3+1).padStart(2,'0')}`;
-function save(){if(saveBlocked)return;try{localStorage.setItem(KEY,JSON.stringify(game));storageOk=true;}catch{storageOk=false;}}
-function validCareerSummary(x){return !!x&&typeof x.id==='string'&&x.id.length<=120&&typeof x.name==='string'&&x.name.length<=16&&typeof x.title==='string'&&x.title.length<=150&&Number.isInteger(x.startYear)&&Number.isInteger(x.endYear)&&x.startYear===2026&&x.endYear>=2026&&x.endYear<=2101&&Number.isInteger(x.wins)&&x.wins>=0&&Number.isInteger(x.policies)&&x.policies>=0&&Number.isInteger(x.choices)&&x.choices>=0&&Array.isArray(x.examples)&&x.examples.length<=2&&x.examples.every(e=>typeof e.title==='string'&&e.title.length<=300&&typeof e.text==='string'&&e.text.length<=2000);}
+function save(){if(saveBlocked||welcome)return;try{localStorage.setItem(KEY,JSON.stringify(game));storageOk=true;}catch{storageOk=false;}}
+function validCareerSummary(x){return !!x&&typeof x.id==='string'&&x.id.length<=120&&typeof x.name==='string'&&x.name.length<=16&&typeof x.title==='string'&&x.title.length<=150&&Number.isInteger(x.startYear)&&Number.isInteger(x.endYear)&&x.startYear===2026&&x.endYear>=2026&&x.endYear<=2101&&Number.isInteger(x.wins)&&x.wins>=0&&Number.isInteger(x.policies)&&x.policies>=0&&Number.isInteger(x.choices)&&x.choices>=0&&Array.isArray(x.examples)&&x.examples.length<=2&&(!x.footprints||(Array.isArray(x.footprints)&&x.footprints.length<=6&&x.footprints.every(v=>typeof v==='string'&&v.length<=300)))&&x.examples.every(e=>typeof e.title==='string'&&e.title.length<=300&&typeof e.text==='string'&&e.text.length<=2000);}
 function archiveCareer(){
  if(saveBlocked||(!game.tick&&!game.choiceCount&&!game.results.length))return true;
- const profile=E.identityProfile(game),summary={id:`${game.storySeed??game.seed}-${game.tick}-${game.choiceCount||0}-${game.name}`,name:game.name,startYear:2026,endYear:E.date(game).year,title:profile.title,choices:profile.choices,wins:game.results.filter(r=>r.won).length,policies:game.completed.length,examples:profile.examples.slice(0,2).map(e=>({title:e.title,text:e.text}))};
+ const profile=E.identityProfile(game),summary={id:`${game.storySeed??game.seed}-${game.tick}-${game.choiceCount||0}-${game.name}`,name:game.name,startYear:2026,endYear:E.date(game).year,title:profile.title,choices:profile.choices,wins:game.results.filter(r=>r.won).length,policies:game.completed.length,examples:profile.examples.slice(0,2).map(e=>({title:e.title,text:e.text})),footprints:[...(E.storySummary?.(game)?.people||[]).map(p=>`${p.name} · ${p.status}`),`공개된 의혹 ${game.corruption?.exposures||0}번`,E.storySummary?.(game)?.recap?.brokenPromise].filter(Boolean).slice(0,6)};
  careerArchives=[summary,...careerArchives.filter(x=>x.id!==summary.id)].slice(0,5);
  if(archiveBlocked)return false;
  try{localStorage.setItem(ARCHIVE_KEY,JSON.stringify(careerArchives));archiveWarning='';return true;}catch{archiveWarning='이전 인생 요약을 저장하지 못했습니다. 이번 회고는 현재 화면에서만 유지됩니다.';return false;}
 }
-function renderCareerArchives(){return `<section><div class="section-header"><h2>지난 인생과 비교하기</h2>${badge(`최근 ${careerArchives.length} / 5개`,'outline')}</div>${archiveWarning?`<p class="notice" role="status">${esc(archiveWarning)}</p>`:''}${careerArchives.length?`<div class="policy-grid">${careerArchives.map(a=>`<article class="card card-pad"><span class="eyebrow">${a.startYear} — ${a.endYear}</span><h3>${esc(a.name)}</h3><p class="serif" style="margin-top:7px">${esc(a.title)}</p><p class="small muted" style="margin-top:8px">선택 ${a.choices}회 · 당선 ${a.wins}회 · 정책 성과 ${a.policies}개</p>${a.examples.length?`<div class="divider"></div><p class="small muted">나를 만든 대표 선택</p>${a.examples.map(e=>`<div class="recent-row"><div><h3>${esc(e.title)}</h3><p>${esc(narrativeText(e.text))}</p></div></div>`).join('')}`:''}</article>`).join('')}</div>`:'<div class="card card-pad"><p class="muted">새 인생을 시작하면 이전 인생의 유형과 대표 선택을 최근 5개까지 여기에 남깁니다.</p></div>'}</section>`;}
+function renderCareerArchives(){return `<section><div class="section-header"><h2>지난 인생과 비교하기</h2>${badge(`최근 ${careerArchives.length} / 5개`,'outline')}</div>${archiveWarning?`<p class="notice" role="status">${esc(archiveWarning)}</p>`:''}${careerArchives.length?`<div class="policy-grid">${careerArchives.map(a=>`<article class="card card-pad"><span class="eyebrow">${a.startYear} — ${a.endYear}</span><h3>${esc(a.name)}</h3><p class="serif" style="margin-top:7px">${esc(a.title)}</p><p class="small muted" style="margin-top:8px">선택 ${a.choices}회 · 당선 ${a.wins}회 · 정책 성과 ${a.policies}개</p>${a.footprints?.length?`<ul class="archive-footprints">${a.footprints.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${a.examples.length?`<div class="divider"></div><p class="small muted">나를 만든 대표 선택</p>${a.examples.map(e=>`<div class="recent-row"><div><h3>${esc(e.title)}</h3><p>${esc(narrativeText(e.text))}</p></div></div>`).join('')}`:''}</article>`).join('')}</div>`:'<div class="card card-pad"><p class="muted">새 인생을 시작하면 이전 인생의 유형과 대표 선택을 최근 5개까지 여기에 남깁니다.</p></div>'}</section>`;}
 function toast(text,error=false){const t=$('#toast');t.textContent=text;t.className='show'+(error?' error':'');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.className='',3500);}
 function portrait(){return `<div class="portrait"><svg viewBox="0 0 60 66" aria-hidden="true"><path fill="#6f8169" d="M5 66V55c0-12 11-19 25-19s25 7 25 19v11"/><path fill="#f4f0e2" d="m21 40 9 18 9-18"/><path fill="#c1ad8b" d="M24 31h12v12l-6 6-6-6z"/><ellipse cx="30" cy="23" rx="13" ry="17" fill="#d4c6a8"/><path fill="#354d3b" d="M17 26V14C17 0 44 0 44 16v10l-4-11c-6 5-14 4-18 2z"/><path fill="#486044" d="m27 51 3 7 3-7-3-3zM28 57h4l3 9H25z"/></svg></div>`;}
 function building(){let columns=Array.from({length:13},(_,i)=>`<path d="M${66+i*17} 109v57" stroke="#a7b599" stroke-width="6"/><path d="M${68+i*17} 109v57" stroke="#66876d" stroke-width="2"/>`).join('');return `<svg class="building" viewBox="0 0 380 215" aria-hidden="true"><circle cx="263" cy="74" r="65" fill="none" stroke="#94a58a" stroke-width=".6" opacity=".25"/><circle cx="263" cy="74" r="93" fill="none" stroke="#94a58a" stroke-width=".6" opacity=".16"/><path d="M152 93c-2-42 17-63 41-63s44 21 42 63" fill="#718d75"/><path d="M160 93c0-38 12-60 33-63m0 0c12 17 18 39 18 63m-18-63v63" fill="none" stroke="#a2b697" stroke-width="1"/><path d="M188 30v-6h10v6" fill="#a9b69b"/><path d="M193 24V11" stroke="#aab89e"/><path d="M194 12h17v10h-17" fill="#bcc5ac"/><path d="M55 99h276v10H55z" fill="#bac4ab"/><path d="M67 88h252l16 11H51z" fill="#819b7b"/>${columns}<path d="M51 166h284v8H51zM42 174h302v8H42zM31 182h324v7H31z" fill="#a4b195"/><path d="M14 189h355v26H14" fill="#58785d"/><path d="M0 207h380" stroke="#bbbe9c" stroke-width="1"/><path d="M16 189c-16-20 0-42 11-24 2-18 20-17 19 3M325 189c-11-17-5-38 9-27 6-24 25-16 24 1 17-4 20 20 11 26" fill="#70866a"/></svg>`;}
@@ -5907,7 +6237,7 @@ function opinion(){const value=E.support(game),old=game.history.length>1?game.hi
 function right(){return `<aside class="right-column stack">${profile()}${nextCard()}${opinion()}</aside>`;}
 function hasOutcomeNumbers(text){return /(?:신뢰|인지도|정책 역량|조직력|체력|활동 자원|활동 준비도|공공 예산|성과)\s+[+−-]?\d/.test(text||'');}
 function narrativeText(text){return hasOutcomeNumbers(text)?String(text).split(/ · (?=(?:신뢰|인지도|정책 역량|조직력|체력|활동 자원|활동 준비도|공공 예산|성과)\s+[+−-]?\d)/)[0]:String(text||'');}
-function outcomeDetails(o){return `<details class="creator-details outcome-details"><summary>확정된 변화 자세히 보기</summary><div class="outcome-changes">${(o.changes||[]).map(c=>`<div class="outcome-stat ${c.delta<0?'negative':c.delta===0?'neutral':'positive'}"><small>${esc(c.key==='funds'?'활동 준비도':c.label||STAT_NAMES[c.key]||c.key)}</small><strong>${c.delta>0?'+':''}${Number(c.delta.toFixed(1))}</strong><span>${Number(c.before.toFixed(1))} → ${Number(c.after.toFixed(1))}${c.delta===0?' · 변화 없음':''}</span></div>`).join('')}</div>${(o.groups||[]).length?`<div class="divider"></div><p class="small muted">가상 유권자의 반응 지수</p>${o.groups.map(g=>`<div class="budget-row"><span>${esc(g.name)}</span><strong>${g.delta>0?'+':''}${Number(g.delta.toFixed(1))}</strong></div>`).join('')}`:''}</details>`;}
+function outcomeDetails(o){return `<details class="creator-details outcome-details"><summary>확정된 변화 자세히 보기</summary>${(o.notices||[]).map(n=>`<p class="outcome-notice">${esc(narrativeText(n))}</p>`).join('')}<div class="outcome-changes">${(o.changes||[]).map(c=>`<div class="outcome-stat ${c.delta<0?'negative':c.delta===0?'neutral':'positive'}"><small>${esc(c.key==='funds'?'활동 준비도':c.label||STAT_NAMES[c.key]||c.key)}</small><strong>${c.delta>0?'+':''}${Number(c.delta.toFixed(1))}</strong><span>${Number(c.before.toFixed(1))} → ${Number(c.after.toFixed(1))}${c.delta===0?' · 변화 없음':''}</span></div>`).join('')}</div>${(o.groups||[]).length?`<div class="divider"></div><p class="small muted">가상 유권자의 반응 지수</p>${o.groups.map(g=>`<div class="budget-row"><span>${esc(g.name)}</span><strong>${g.delta>0?'+':''}${Number(g.delta.toFixed(1))}</strong></div>`).join('')}`:''}</details>`;}
 function renderOutcomeCard(o,label){if(!o)return '';const positive=(o.groups||[]).filter(g=>g.delta>0),negative=(o.groups||[]).filter(g=>g.delta<0),chosen=o.kind==='choice'&&game.eventResolved?E.currentEvent(game).choices[game.choice]:null,narrative=o.narrative||chosen?.after||(o.kind==='choice'?'당신의 입장이 공개됐습니다. 같은 결정을 두고도 받아들이는 이유는 달랐습니다.':'현장에서 시간을 보냈습니다. 쌓인 경험이 앞으로의 판단에 남습니다.');return `<section class="outcome-card" role="status" aria-live="polite"><div class="section-label">${icon('message')}${label}</div><h3>${esc(o.title)}</h3><p class="outcome-story">${esc(narrativeText(narrative))}</p><div class="outcome-reactions">${positive.length?`<p class="reaction positive"><strong>반긴 사람들</strong> ${positive.map(g=>esc(g.name)).join('·')}에 무게를 두는 유권자들이 호응했습니다.</p>`:''}${negative.length?`<p class="reaction negative"><strong>불편해한 사람들</strong> ${negative.map(g=>esc(g.name)).join('·')}에 무게를 두는 유권자들은 우려를 드러냈습니다.</p>`:''}${!positive.length&&!negative.length?'<p class="reaction neutral">민심은 아직 뚜렷하게 움직이지 않았습니다. 다음 행보를 지켜보는 시선이 남았습니다.</p>':''}</div>${o.delayed?'<p class="inline-help">이번 결정의 영향이 뒤에 다시 드러날 수 있습니다.</p>':''}${outcomeDetails(o)}</section>`;}
 function renderOutcome(){return renderOutcomeCard(game.lastOutcome,game.lastOutcome?.kind==='choice'?'선택 뒤에 남은 반응':'직접 나선 뒤의 반응');}
 function renderIdentity(){if(!E.identityProfile)return '';const p=E.identityProfile(game);return `<section class="card card-pad identity-profile"><div class="between"><span class="eyebrow">WHAT KIND OF POLITICIAN AM I?</span>${badge(`나의 선택 ${p.choices}회`,'outline')}</div><h2>${esc(p.title)}</h2><p>${esc(p.description)}</p><div class="identity-tags">${(p.axes||[]).map(a=>`<div class="identity-trait"><span>${esc(a.label)}</span><strong>${Math.round(a.percent)}%</strong><div class="mini-track"><span style="width:${Math.max(0,Math.min(100,a.percent))}%"></span></div></div>`).join('')}</div>${p.examples?.length?`<div class="divider"></div><p class="small muted">이 선택들이 지금의 나를 만들었습니다.</p>${p.examples.slice(0,2).map(e=>`<div class="recent-row"><span class="log-time">${shortDate(e.tick)}</span><div><h3>${esc(e.title)}</h3><p>${esc(narrativeText(e.text))}</p></div></div>`).join('')}`:''}<p class="inline-help">내 플레이에서 드러난 선택 경향입니다. 실존 정치인의 실제 성격이나 능력 평가는 아닙니다.</p></section>`;}
@@ -5918,21 +6248,39 @@ function renderHomeMetrics(){return `<details class="card card-pad status-panel"
 function renderManualHome(){const ev=E.currentEvent(game);return `<div class="layout"><div class="stack">${saveBlocked?`<section class="notice"><strong>${esc(loadMessage)}</strong><p>현재 화면은 임시 새 게임입니다. 새 인생을 확정하거나 정상 저장 파일을 불러오기 전까지 자동 저장하지 않습니다.</p>${btn('원본 기록 내보내기','exportOriginal','','secondary tiny')}</section>`:''}${game.ended?`<div class="card end-card"><h2>당신은 어떤 정치인으로 기억될까요?</h2><p>당선 ${game.results.filter(r=>r.won).length}회 · 정책 성과 ${game.completed.length}개 · ${game.logs.length}개의 기록</p><div style="margin-top:20px">${btn('나의 일대기 읽기','nav','history')} ${btn('새로운 인생 시작','new','','secondary')}</div></div>`:''}${game.tick===0?`<section class="card hero"><div class="hero-copy"><div class="eyebrow">YOUR CHOICE. OUR TOMORROW.</div><h2>내가 정치인이 된다면,<br>어떤 정치인일까?</h2><p>이기기 위해 어디까지 타협할 것인가.<br>지키려는 약속과 얻고 싶은 자리 사이에서 선택하세요.</p><div class="hero-tag">대한민국 정치인 시뮬레이터</div></div>${building()}</section>`:''}${game.tick===0&&!game.politicianId?`<section class="card card-pad onboarding-card"><div class="eyebrow">CHOOSE YOUR POLITICAL LIFE</div><h2>누구의 정치 인생을 시작할까요?</h2><p>실존 정치인 ${PEOPLE.length}명 중 한 명을 고르거나, 나만의 인물을 만들어 보세요. 기본 난이도는 쉬움입니다.</p><div class="flex">${btn('실제 정치인 선택','new')}${btn('나로 시작하기','newCustom','','secondary')}</div></section>`:''}${!game.ended?renderNextStep():''}<section class="card story"><div class="story-top"><div class="section-label">${icon('message')}이번 분기의 선택</div>${badge(esc(ev.tag),'gold')}</div><h2>${ev.title.split('\n').map(esc).join('<br>')}</h2><p class="story-description">${esc(ev.text)}</p><div class="story-choices">${ev.choices.map((c,i)=>`<button class="choice ${game.choice===i?'selected':''}" data-action="choose" data-value="${i}" ${game.eventResolved||game.ended?'disabled':''}><span class="choice-number">${game.choice===i?'✓':['A','B','C'][i]}</span><div class="choice-copy"><strong>${esc(c.title)}</strong><p>${esc(c.desc)}</p></div>${icon('chevron','choice-chevron')}</button>`).join('')}</div>${game.eventResolved?`<div class="decision-result">${icon('check')}입장을 기록했습니다. 이제 다음 분기로 넘어갈 수 있습니다.</div>`:'<p class="small muted" style="margin-top:15px">모두를 만족시키기는 어렵습니다. 무엇을 얻고 무엇을 감수할지 고르세요.</p>'}</section>${renderOutcome()}${!game.ended?`<section class="card card-pad turn-footer"><div class="turn-hint">${game.eventResolved?'나의 선택과 운영방침에 따라 다음 분기의 정치가 이어집니다.':'이번 사건에 대한 입장을 먼저 정해 주세요.'}</div>${btn(`다음 분기로 ${icon('arrow')}`,'advance','','',!game.eventResolved)}</section>${renderAgenda()}${renderIntervention()}`:''}${renderIdentity()}${renderHomeMetrics()}<section class="card card-pad"><div class="section-header"><h3>최근의 발자취</h3>${textBtn('일대기 보기','nav','history')}</div>${game.logs.slice(0,3).map(l=>`<div class="recent-row"><span class="log-time">${shortDate(l.tick)}</span><span class="recent-dot"></span><div><h3>${esc(l.title)}</h3><p>${esc(narrativeText(l.text))}</p></div></div>`).join('')}</section></div>${right()}</div>`;}
 
 function renderStoryOutcome(){
- const o=game.lastStory;if(!o)return '';
- return `<section class="story-receipt" id="story-receipt" aria-live="polite" role="status"><div class="section-label">지난 선택이 남긴 것</div><h3>${esc(o.title)}</h3><p>${esc(narrativeText(o.narrative||o.context||''))}</p>${(o.notices||[]).length?`<div class="story-notices">${o.notices.map(n=>`<p>${esc(narrativeText(n))}</p>`).join('')}</div>`:''}<details class="story-extra"><summary>어떤 변화가 있었나</summary>${outcomeDetails(o)}</details></section>`;
+ const o=E.storySummary?.(game)?.reaction||game.lastStory;if(!o)return '';
+ const body=typeof o==='string'?o:o.narrative||o.context||o.text||o.title||'';
+ return `<section class="story-receipt compact-receipt" id="story-receipt" aria-live="polite" role="status"><span class="receipt-mark">↳</span><div><h3>방금 선택이 남긴 것</h3><p>${esc(narrativeText(body))}</p>${typeof o==='object'&&o.notices?.length?`<p class="consequence-notice">${esc(narrativeText(o.notices.find(n=>/제보|거래|요구|실패|완료/.test(n))||o.notices[0]))}</p>`:''}${typeof o==='object'&&(o.changes?.length||o.notices?.length)?outcomeDetails(o):''}</div></section>`;
+}
+function renderStoryPeople(summary){
+ const people=summary.people||[];if(!people.length)return '';
+ return `<details class="cast-panel"><summary><span>내 곁의 사람들 <small>가상 인물</small></span><span class="cast-chips">${people.map(p=>`<span class="cast-chip"><b>${esc(p.name)}</b> ${esc(p.status)}</span>`).join('')}</span></summary><div class="cast-list">${people.map(p=>`<article><span class="cast-avatar">${esc(p.name.slice(-1))}</span><div><strong>${esc(p.name)} <small>${esc(p.role)}</small></strong><p>${esc(p.detail)}</p></div>${badge(esc(p.status),'outline')}</article>`).join('')}</div></details>`;
+}
+function renderChapterRecap(recap){
+ if(!recap)return '';
+ const lines=[['얻은 동료',Array.isArray(recap.allies)?recap.allies.join(' · '):recap.allies],['남은 빚',Array.isArray(recap.debts)?recap.debts.join(' · '):recap.debts],['약속의 행방',recap.brokenPromise||E.storySummary(game).pledge]];
+ return `<section class="chapter-recap" id="chapter-recap"><span class="eyebrow">이번 장에 남긴 흔적</span><h3>${esc(recap.nickname||E.identityProfile(game).title)}</h3>${recap.summary?`<p>${esc(recap.summary)}</p>`:''}<dl>${lines.map(([key,value])=>`<div><dt>${key}</dt><dd>${esc(value||'없음')}</dd></div>`).join('')}</dl></section>`;
 }
 function renderStoryHome(){
- const ev=E.currentEvent(game),status=E.corruptionStatus(game),score=E.support(game),goal=game.target?E.office(game.target.id):null;
- return `<div class="story-shell">
+ const scene=E.storyScene?.(game),summary=E.storySummary?.(game)||{},ev=scene||E.currentEvent(game),identity=E.identityProfile(game),status=E.corruptionStatus(game),goal=game.target?E.office(game.target.id):null;
+ const progress=scene?.id?.startsWith('chapter-')?scene.progress:summary.progress,action=scene?'sceneChoice':'choose',token=decisionToken();
+ return `<div class="story-shell v5-story">
  ${saveBlocked?`<section class="notice"><strong>${esc(loadMessage)}</strong><p>원본 기록은 보호하고 있습니다.</p>${btn('원본 기록 내보내기','exportOriginal','','secondary tiny')}</section>`:''}
- <div class="story-person"><div><strong>${esc(game.name)}</strong><span>${game.office?esc(E.office(game.office.id).name):'정치에 뛰어든 시민'} · ${esc(scenarioPartyName(game.party))}</span></div>${textBtn('인물 바꾸기','new')}</div>
- <div class="story-signals"><span>민심 <strong>${score>=65?'기대가 커짐':score>=45?'지켜보는 중':'마음이 멀어짐'}</strong></span><span>캠프 <strong>실무 자동</strong></span><span class="story-risk">뒷거래 <strong>${esc(status.label)}</strong></span></div>
- ${game.tick===0&&!game.choiceCount?`<div class="story-intro"><p><strong>내가 정치인이 된다면, 어디까지 타협할까?</strong><br>선택 하나면 이야기가 이어집니다. 선거 준비와 돈 관리는 캠프가 맡습니다.</p>${!game.politicianId?`<div class="flex">${btn('실제 정치인 선택','new','','secondary tiny')}${textBtn('나로 시작하기','newCustom')}</div>`:''}</div>`:''}
+ <header class="chapter-line"><div><span class="chapter-label">${esc(summary.chapterTitle||'나의 정치 일대기')}</span><h1>${esc(summary.goal||(game.ended?'내 선택을 돌아볼 시간':goal?`${goal.name}에 도전하기`:game.presidentServed?'대통령 이후의 삶':'다음 행보를 정할 시간'))}</h1></div>${progress?`<span class="chapter-count">${progress.current}<small> / ${progress.total}</small></span>`:''}</header>
+ ${progress?`<div class="chapter-progress" aria-label="${esc(progress.label||'이야기 진행')} ${progress.current} / ${progress.total}"><span style="width:${Math.max(0,Math.min(100,progress.current/progress.total*100))}%"></span></div>`:''}
+ ${game.ended?`<section class="card end-card"><span class="eyebrow">나의 정치 일대기</span><h2>당신은 이런 정치인이 되었습니다.</h2><p>${esc(identity.title)}</p>${renderChapterRecap(summary.recap)}<div class="flex">${btn('일대기 돌아보기','nav','history')}${btn('다른 인생 시작','new','','secondary')}</div></section>`:`<section class="card story story-main scene-card" id="current-story"><div class="story-top"><span class="scene-speaker">${icon(scene?.speaker?'message':'flag')}${esc(scene?.speaker||E.dateLabel(game))}</span><span class="scene-tag">${esc(ev.tag)}</span></div><h2 tabindex="-1">${ev.title.split('\n').map(esc).join('<br>')}</h2><p class="story-description">${esc(ev.text)}</p>${scene?.id?.includes('recap')?renderChapterRecap(summary.recap):''}<div class="story-choices">${ev.choices.map((c,i)=>`<button type="button" class="choice ${!scene&&game.choice===i?'selected':''}" data-action="${action}" data-value="${i}" data-story-token="${esc(token)}" ${!scene&&game.eventResolved?'disabled':''}><span class="choice-number">${['A','B','C'][i]}</span><span class="choice-copy"><strong>${esc(c.title)}</strong>${c.desc?`<span class="choice-description">${esc(c.desc)}</span>`:''}</span>${icon('arrow','choice-chevron')}</button>`).join('')}</div>${!scene&&game.eventResolved?`<p class="inline-help">이미 고른 선택을 유지하고 이어갑니다.</p>${btn('이야기 이어가기','continueStory','','full')}`:''}<p class="scene-fiction">가상 시나리오 · 실제 인물의 행적이 아닙니다.</p></section>`}
  ${renderStoryOutcome()}
- ${game.ended?`<section class="card end-card"><h2>당신은 어떤 정치인이 되었나요?</h2><p>${esc(E.identityProfile(game).title)}</p><div class="flex">${btn('나의 일대기 읽기','nav','history')}${btn('다른 인생 시작','new','','secondary')}</div></section>`:`<section class="card story story-main" id="current-story"><div class="story-top"><span class="section-label">${E.dateLabel(game)} · 이번 사건</span>${badge(esc(ev.tag),'gold')}</div><h2>${ev.title.split('\n').map(esc).join('<br>')}</h2><p class="story-description">${esc(ev.text)}</p>${ev.corruption?'<p class="fiction-note">가상 캠프 사건 · 실제 인물의 행적이 아닙니다.</p>':''}<div class="story-choices">${ev.choices.map((c,i)=>`<button class="choice ${game.choice===i?'selected':''}" data-action="choose" data-value="${i}" ${game.eventResolved?'disabled':''}><span class="choice-number">${game.choice===i?'✓':['A','B','C'][i]}</span><span class="choice-copy"><strong>${esc(c.title)}</strong><span class="choice-description">${esc(c.desc)}</span></span>${icon('chevron','choice-chevron')}</button>`).join('')}</div>${game.eventResolved?`<p class="inline-help">지난 버전에서 선택을 마친 분기입니다. 결과를 유지한 채 이어갑니다.</p>${renderOutcome()}${btn('이야기 이어가기','continueStory','','full')}`:'<p class="story-rule">고르면 다음 분기로 이어집니다. 정답보다 내 판단을 따라가세요.</p>'}</section>`}
- <div class="story-camp"><span>${icon('ballot')}${goal?`${esc(goal.name)} · ${game.target.tick===game.tick?'이번 선택 후 개표':`${game.target.tick-game.tick}분기 뒤 개표`}`:'캠프가 다음 도전을 준비합니다.'}</span>${goal?`<small>준비 비용 ${won(E.campaignQuote(game).total)} · 실제 지출과 정산은 기록에 남습니다.</small>`:''}</div>
- <details class="card card-pad story-extra"><summary>캠프 보고와 자세한 관리</summary><p>${esc(status.description)}</p><p class="small muted">선거 출마·자금 마련·정책 실무를 자동으로 진행합니다. 정당은 임의로 바꾸지 않습니다.</p><div class="flex story-more">${btn('출마 목표 바꾸기','nav','elections','secondary tiny')}${btn('돈과 능력 보기','storyReport','','secondary tiny')}${btn('직접 관리 모드','playMode','manual','secondary tiny')}</div></details>
- <p class="story-fiction">실존 인물로 플레이해도 선택과 사건은 가상의 인생입니다.</p></div>`;
+ <section class="identity-strip"><span>${icon('spark')} 지금의 나는</span><strong>${esc(identity.title)}</strong>${textBtn('일대기','nav','history')}</section>
+ ${renderStoryPeople(summary)}
+ <details class="story-extra camp-details"><summary>선거 · 공약 · 자금 확인</summary><p>${goal?`${esc(goal.name)} · ${game.target.tick===game.tick?'이번 분기 개표':`${game.target.tick-game.tick}분기 뒤 개표`}`:game.presidentServed?'대통령 임기를 마쳤습니다. 새로운 행보는 직접 결정합니다.':'다음 출마는 내가 결정합니다.'}</p>${summary.pledge?`<p>나의 대표 약속 · <strong>${esc(summary.pledge)}</strong></p>`:''}<p class="small muted">${esc(status.description)}</p><div class="flex story-more">${btn('다른 선거 살펴보기','nav','elections','secondary tiny')}${btn('공약과 정책','nav','policies','secondary tiny')}${btn('돈과 능력 보기','storyReport','','secondary tiny')}</div>${game.tick===0&&!game.choiceCount&&!scene?`<div class="new-chapter-invite"><p>새 첫 선거 이야기가 열렸습니다. 인물을 고르고 일곱 번의 결정으로 첫 선거를 치러보세요.</p>${btn('새 첫 선거 시작','new','','secondary tiny')}</div>`:''}</details>
+ </div>`;
+}
+function renderWelcome(){
+ return `<section class="welcome-screen" id="welcome-screen"><div class="welcome-issue"><span>民意 · 민의</span><span>정치 인생 시뮬레이터</span></div><div class="welcome-copy"><span class="welcome-kicker">권력보다 먼저, 선택이 있다.</span><h1>내가 정치인이 된다면,<br><em>어떤 정치인일까?</em></h1><p>지키고 싶은 약속 하나.<br>선거를 앞두고 도착한, 거절하기 어려운 제안.</p></div><div class="welcome-actions"><button class="welcome-choice" data-action="newCustom"><span class="welcome-icon">나</span><span><strong>나로 시작하기</strong><small>내 이름으로 첫 선거에 도전</small></span>${icon('arrow')}</button><button class="welcome-choice real-choice" data-action="new"><span class="welcome-icon">人</span><span><strong>실제 정치인으로 시작</strong><small>${PEOPLE.length}명 중 고르는 새로운 가상 인생</small></span>${icon('arrow')}</button></div><div class="welcome-caption"><span>첫 번째 장 · 나의 첫 선거</span><span>7개의 결정, 서로 다른 흔적</span></div>${!storageOk?'<p class="notice">이 브라우저에 저장할 수 없습니다. 플레이 뒤 설정에서 파일로 내보내 주세요.</p>':''}<p class="welcome-fiction">실제 제도를 참고한 창작 게임입니다.<br>인물의 선택과 사건은 실제 행적·평가가 아닙니다.</p></section>`;
+}
+function renderStoryFrame(){
+ const selected=selectedPerson();
+ return `<div class="play-frame"><header class="play-masthead"><button class="play-brand" data-action="nav" data-value="home" aria-label="민의 플레이 화면">민의<span>民意</span></button><nav aria-label="주 메뉴">${(welcome?[]:[['home','플레이'],['people','인물'],['history','일대기']]).map(([id,label])=>`<button data-action="nav" data-value="${id}" ${tab===id?'aria-current="page"':''}>${label}</button>`).join('')}</nav><button class="play-settings" data-action="settings" aria-label="저장과 설정">${icon('cloud')}<span>${welcome?'기록 불러오기':saveBlocked?'기록 보호':storageOk?'저장됨':'저장 실패'}</span></button></header><main id="main" class="play-main">${welcome?renderWelcome():`<div class="play-byline"><span><b>${esc(game.name)}</b> · ${game.office?esc(E.office(game.office.id).name):'첫걸음'}${selected?' · 가상 인생':''}</span><span>${E.dateLabel(game)}</span></div>${renderStoryHome()}`}</main><footer class="play-footer"><span>민의 v0.5</span><button data-action="nav" data-value="guide">게임 안내 · 출처 ↗</button>${!welcome?`<button data-action="new">새로운 인생</button>`:''}</footer></div>`;
 }
 function renderHome(){return storyMode()?renderStoryHome():renderManualHome();}
 function storyReport(){modal('캠프 보고',`${renderHomeMetrics()}<p class="small muted">계좌와 선거 자금의 처리 내역입니다. 직접 자금을 조정하려면 선거 화면으로 이동하세요.</p>${btn('선거 자금 관리 열기','openElections','','secondary full')}`);}
@@ -5942,9 +6290,9 @@ function renderElections(){return `<div class="layout"><div>${!game.results.leng
 function renderPolicies(){return `<div class="layout"><div><div class="notice"><strong>${game.office?`${E.office(game.office.id).name}로서 약속을 실천할 시간입니다.`:'선거 전에 약속하고, 당선 후에 증명하세요.'}</strong><br>핵심 공약은 최대 3개. 당선 후에는 예산과 협력을 확보해 추진합니다. 미완료 공약은 임기 말 신뢰에 반영됩니다.</div><div class="between" style="margin-bottom:18px"><h2>나의 정책 포트폴리오</h2>${badge(`공약 ${game.pledges.length} / 3`)}</div><div class="policy-grid">${POLICIES.map(p=>{const project=game.projects.find(x=>x.id===p.id),done=game.completed.includes(p.id),pledged=game.pledges.includes(p.id);return `<article class="card policy-card"><div class="between">${badge(p.category,'outline')}${done?badge('성과 달성'):project?badge('추진 중','gold'):''}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="policy-meta"><span>예산 ${p.cost}</span><span>최소 ${p.quarters}분기</span></div>${project?`<div class="progress"><span style="width:${Math.max(5,(game.tick-project.started)/(project.due-project.started)*100)}%"></span></div><p class="small">성과 확인까지 ${project.due-game.tick}분기</p>`:''}<div class="policy-bottom">${btn(pledged?'공약 선택됨 ✓':'공약에 추가','pledge',p.id,'secondary tiny')}${done?'':btn(project?'추진 중':'추진하기','project',p.id,'tiny',!!project||!game.office)}</div></article>`;}).join('')}</div></div><aside class="right-column stack">${profile()}<section class="card card-pad"><h3>지금, 실행할 수 있는 것</h3><div class="metric-number" style="margin-top:16px">${Math.round(game.budget)}<small>/ 100 공공 예산</small></div><p class="small muted">당선 후 분기마다 예산 ${game.difficulty==='easy'?14:10}을 확보합니다. 정책 역량과 조직력이 높을수록 협의와 집행에 성공할 가능성이 커집니다.</p><div class="divider"></div><p class="small muted">의원은 조례·법안 발의와 예산 협의, 단체장·대통령·교육감은 각 소관 사업의 집행을 모의합니다. 정책 규모와 심사 절차는 축약돼 있습니다.</p></section>${opinion()}</aside></div>`;}
 function peopleCards(query,partyId,limit,creatorMode=false){const matches=findPeople(query,partyId),idPrefix=creatorMode?'creator':'people';return `<div class="roster-count" role="status">${matches.length}명 ${query?'검색됨':'등록'} · ${Math.min(limit,matches.length)}명 표시</div><div class="${creatorMode?'roster-grid':'people-grid'}">${matches.slice(0,limit).map(p=>creatorMode?`<button type="button" class="roster-option ${creator.politicianId===personId(p)?'selected':''}" data-action="selectPolitician" data-value="${esc(personId(p))}" aria-pressed="${creator.politicianId===personId(p)}"><span class="person-avatar" style="color:${E.party(p.party).color};background:${E.party(p.party).color}13">${esc(p.name.slice(0,1))}</span><span><strong>${esc(p.name)}</strong><small>${esc(E.party(p.party).name)} · ${esc(p.region||p.role)}</small><small>${esc(p.cohort||'과거 공개 자료')} 기준</small></span>${creator.politicianId===personId(p)?icon('check'):''}</button>`:`<article class="card person"><div class="person-avatar" style="color:${E.party(p.party).color};background:${E.party(p.party).color}13">${esc(p.name.slice(0,1))}</div><div><h3>${esc(p.name)}</h3><p>${esc(E.party(p.party).name)} · ${esc(p.cohort||'과거 자료')} 기준</p><p>${esc(p.role)}</p><p>${esc(p.region||'')}</p>${textBtn('이 인물로 플레이','playPerson',personId(p))}${textBtn('이력과 교류 보기','person',personId(p))}${game.relationships[personId(p)]||game.relationships[p.name]?`<p>가상 포럼 ${game.relationships[personId(p)]||game.relationships[p.name]}회</p>`:''}</div></article>`).join('')}</div>${!matches.length?`<div class="roster-empty"><p>조건에 맞는 인물이 없습니다.</p>${btn('검색 조건 초기화',creatorMode?'clearCreatorSearch':'clearPeopleSearch','','secondary tiny')}</div>`:''}${matches.length>limit?`<div class="roster-more">${btn(`24명 더 보기 · ${matches.length-limit}명 남음`,creatorMode?'rosterMore':'peopleMore','','secondary full')}</div>`:''}`;}
 function renderPeople(){return `<div class="layout"><div class="stack"><div class="notice" style="margin:0"><strong>실제 이름으로 시작하는, 나만의 가상 정치 인생.</strong><br>실존 인물 ${PEOPLE.length}명을 선택해 플레이할 수 있습니다. 인물별 표시 시점의 공개 이력이며, 현재 소속·직책을 뜻하지 않습니다. 나이·능력·공직은 새 시나리오에서 설정합니다.</div><section><div class="section-header"><h2>플레이할 정치인을 찾아보세요</h2>${badge(`${PEOPLE.length}명`)}</div><div class="roster-tools"><div class="field"><label for="people-search">이름·지역·이력 검색</label><input id="people-search" type="search" placeholder="예: 이재명, 부산, 비례대표" value="${esc(peopleQuery)}" autocomplete="off"></div><div class="field"><label for="people-party-filter">자료 기준 소속 정당</label><select id="people-party-filter"><option value="all">모든 정당</option>${PARTIES.map(p=>`<option value="${p.id}" ${peopleParty===p.id?'selected':''}>${esc(p.name)}</option>`).join('')}</select></div></div><div id="people-roster">${peopleCards(peopleQuery,peopleParty,peopleLimit)}</div></section><section><div class="section-header"><h2>나의 게임 속 정당</h2>${badge('정당 변경도 직접 개입')}</div><p class="small muted" style="margin-bottom:14px">공개 자료를 참고한 고정 시나리오 정당입니다. 실제 현재 존속·소속과 다를 수 있습니다.</p><div class="party-grid">${PARTIES.map(p=>`<article class="card party-card ${p.id===game.party?'selected':''}"><div class="party-symbol" style="background:${p.color}">${esc(p.short.slice(0,2))}</div><div><h3>${esc(p.name)}${p.historical?' · 2024 시나리오':''}${p.id===game.party?' · 현재 게임 소속':''}</h3><p>${esc(p.desc)}</p>${p.id===game.party?'<span class="small muted">함께 걷는 중</span>':textBtn(p.id==='ind'?'무소속으로 활동':'이 정당에 합류','party',p.id)}</div></article>`).join('')}</div></section><section class="card card-pad"><h3>비례대표 중심의 정치도 하나의 경로입니다.</h3><p class="muted" style="font-size:12px;margin-top:10px;line-height:1.9">정당을 선택하고 전문성과 조직력을 쌓아 비례대표 명부에 도전할 수 있습니다. 정당의 의석 수와 나의 명부 순번이 함께 당락을 결정합니다. 신당 창당·위성정당 협상·합당은 후속 확장 범위입니다.</p>${textBtn('비례대표 도전하기','nav','elections')}</section></div><aside class="right-column stack">${profile()}${opinion()}</aside></div>`;}
-function renderHistory(){return `<div class="layout"><div class="stack"><section class="card hero" style="min-height:165px"><div class="hero-copy"><div class="eyebrow">THE LIFE YOU CHOSE</div><h2>${esc(game.name)}의 정치 일대기</h2><p>플레이어가 만든 가상 기록 · 실제 인물의 이력이 아닙니다.</p><p>${2026}년부터 ${E.date(game).year}년까지 · ${game.results.filter(r=>r.won).length}번의 당선 · ${game.completed.length}개의 정책 성과</p></div>${building()}</section>${renderIdentity()}<section class="card card-pad"><div class="section-header"><h2>${game.ended?'이 선택들이 나의 정치였습니다.':'지금까지의 선택을 돌아볼까요?'}</h2></div><p class="muted">${game.ended?'이번 인생의 회고를 마쳤습니다. 다른 선택으로 새로운 정치 인생을 시작해 보세요.':'원하는 만큼 경험했다면 이 시점에서 회고를 마쳐도 됩니다. 대통령이 되거나 마지막 나이까지 기다릴 필요는 없습니다.'}</p><div class="flex" style="margin-top:16px;flex-wrap:wrap">${game.ended?btn('새로운 인생 시작','new'):btn('여기까지 회고하기','retire')}${btn(`${icon('download')} 현재 기록 저장`,'export','','secondary')}</div></section>${renderCareerArchives()}<div class="between"><h2>선택은 기록으로 남습니다.</h2></div><section class="card timeline">${game.logs.map(l=>`<article class="timeline-item"><div class="eyebrow">${shortDate(l.tick)} · ${l.type==='election'?'선거':l.type==='policy'?'정책':l.type==='result'?'선택의 결과':'나의 발자취'}</div><h3>${esc(l.title)}</h3><p>${esc(narrativeText(l.text))}</p>${hasOutcomeNumbers(l.text)?`<details class="creator-details"><summary>당시의 수치 기록 보기</summary><p>${esc(l.text)}</p></details>`:''}</article>`).join('')}</section></div><aside class="right-column stack">${profile()}${opinion()}</aside></div>`;}
-function renderGuide(){return `<div class="layout"><div class="stack"><section class="card rule-section"><h2>작은 선택이 쌓여, 하나의 정치가 됩니다.</h2><p style="margin-top:12px">기본 이야기 모드는 사건에서 선택하면 바로 다음 분기로 넘어갑니다. 캠프가 출마·현실 원화 계좌의 자금 마련·정책 실무를 자동으로 처리합니다. 선택의 결과와 비리의 후폭풍은 다음 화면에 남습니다. 직접 관리 모드에서는 다음과 같이 플레이합니다. ① 이번 분기의 사건에서 입장을 고릅니다. 정답을 맞히는 대신 내가 중요하게 생각하는 가치를 골라 보세요. ② 지속 운영방침이 평소의 현장·정책·관계·회복 일정을 자동으로 이어갑니다. 사건에서 선택한 뒤 바로 다음 분기로 넘어가도 됩니다. 꼭 직접 챙길 일이 있을 때만 선택 사항인 수동 개입을 사용하세요. ③ 선거와 도전에서 출마를 선언하고 다음 분기로 넘어갑니다. 선거 분기를 마치면 공천과 개표가 진행됩니다. 당선되면 공약을 실천하고, 낙선하면 다시 준비할 수 있습니다.</p></section><section class="card rule-section"><h3>반영한 선거의 기본 구조</h3><table class="rules-table"><thead><tr><th>선거</th><th>당선 방식</th><th>임기</th></tr></thead><tbody><tr><td>대통령</td><td>전국 최다 득표 · 40세 이상</td><td>5년 단임</td></tr><tr><td>지역구 국회의원</td><td>선거구 최다 득표</td><td>4년</td></tr><tr><td>비례 국회의원</td><td>정당투표 3% 또는 지역구 5석 · 준연동 46석</td><td>4년</td></tr><tr><td>광역·기초단체장</td><td>지역 전체 최다 득표 · 연속 3기 제한</td><td>4년</td></tr><tr><td>광역의회 지역구</td><td>최다 득표 1명</td><td>4년</td></tr><tr><td>기초의회 지역구</td><td>득표순 복수 당선 · 모의 3인 선거구</td><td>4년</td></tr><tr><td>광역·기초의회 비례</td><td>정당투표 5% · 의석과 명부 순번</td><td>4년</td></tr><tr><td>교육감</td><td>비정당 · 경력 5년 · 비당원 1년</td><td>4년</td></tr><tr><td>재보궐선거</td><td>가상 국회의원 결원 이벤트</td><td>잔여 임기</td></tr></tbody></table><p style="margin-top:15px">대통령 이외의 기본 피선거권 연령은 18세로 적용합니다. 비례대표 명부의 홀수 순번 여성 추천을 반영해 캐릭터 성별에 맞는 순번을 부여합니다. 교육감은 교육자 배경의 별도 경로입니다.</p></section><section class="card rule-section"><h3>현실의 제도와 게임의 가정</h3><p>이 버전은 2026년 1분기부터 분기 단위로 진행되는 프로토타입입니다. 2026 지방선거, 2028 총선, 2030 대선을 기준으로 주기를 반복합니다. 날짜·후보 등록·공천 과정은 분기로 압축하며, 미래 선거일을 확정해서 표시하지 않습니다.</p><p style="margin-top:12px">지지율, 정당 세력, 공천 확률, 선거운동 규모, 경쟁 후보의 출마와 인물 교류는 모두 게임용 가상 수치·사건입니다. 실제 지역별 정치 성향과 실제 여론조사는 사용하지 않습니다. 비리 사건의 제안자와 상황은 가상입니다. 실존 인물로 한 선택도 플레이어가 만든 가상 커리어이며 실제 행적을 재현하지 않습니다.</p><p style="margin-top:12px">거주기간·국내 거주·국적·결격사유는 충족한 시민으로 가정합니다. 실제 전국 선거구·전체 정치인 명단, 선거구 획정 변동, 세종·제주의 최신 행정 개편, 후보 명부 인원 상한, 지방 비례의 특례, 선거비용 심사 세부 항목, 선거소송·탄핵·조기 대선은 아직 정밀 재현하지 않습니다. 세종·제주는 기초자치 선거가 없는 기본 구조를 사용합니다. 재보궐은 지역구 국회의원만 모의합니다.</p><p style="margin-top:12px">정책은 예산과 역량으로 성공 여부를 판정합니다. 공약 미이행은 임기 말 신뢰를 낮춥니다. 같은 이름의 정책을 반복해 성과를 쌓을 수 없으며, 다른 공직 출마에 필요한 사임은 공천 이후로 압축합니다. 교육감의 사업은 교육 관련 항목으로 제한합니다.</p></section><section class="card rule-section"><h3>선거 자금: 실제 규칙과 게임의 가정</h3><p>기탁금과 연령에 따른 감액, 선거 후 반환·보전의 기본 기준을 원화 회계에 반영합니다. 선거비용은 선거별 실제 공고 한도가 아니라 가상 선거구 인구에 따른 기본식 또는 2024 총선 평균 참고치입니다. 화면의 각 한도 기준을 확인해 주세요.</p><p style="margin-top:12px">정당 회계로 진행하는 비례대표·정당 추천 대선 경로의 비용 전액 지원은 게임 가정입니다. 선거 계좌 잔액과 해당 선거에만 쓰는 정당 지원, 선거 후 보전 예정액을 구분합니다. 후원금 잔액과 후원금 부담분의 보전금은 다음 선거의 재사용 자금에서 제외합니다. 실제 자금 출처별 인계처·인계 절차와 회계 심사는 축약했습니다. 자기재산 지출액 우선 공제와 당선 의원의 정치자금 재사용 특례는 아직 반영하지 않고, 게임에서는 부담 비율로 보전금을 나눕니다.</p><div class="sources" style="margin-top:16px">${F.FINANCE_SOURCES.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div></section><section class="card rule-section"><h3>자료와 레퍼런스</h3><p style="margin-bottom:15px">제도 확인: 2026.10.26 · 인물: 명부에 표시된 과거 공개 자료 기준 · 국회 정수: 2024 총선 기준. 정당별 도덕성·능력치를 부여하지 않습니다.</p><div class="sources">${SOURCES.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${s.name} ↗</a>`).join('')}</div><div class="divider"></div><p>커리어의 축적과 선택 중심 진행은 <a href="https://kickru.com/" target="_blank" rel="noopener noreferrer">킥루</a>, <a href="https://1in8b.life/ko/" target="_blank" rel="noopener noreferrer">80억 분의 1</a>, <a href="https://slbcareer.com/" target="_blank" rel="noopener noreferrer">이번 생은 야구다</a>를 참고했습니다. 화면·문구·게임 코드는 새로 만들었습니다.</p></section><section class="card rule-section"><h3>저장과 이어하기</h3><p>현재 브라우저에 자동 저장됩니다. 이전 버전의 저장 파일도 이어할 수 있습니다. 다른 기기로 옮기거나 기록을 보관하려면 파일로 내보내세요. 브라우저 데이터가 지워지면 자동 저장도 사라집니다. 지난 인생 요약은 이 브라우저에 최근 5개까지 별도로 보관하며, 현재 게임 파일 내보내기에는 포함되지 않습니다.</p><div class="flex" style="margin-top:16px">${btn(`${icon('download')} 저장 파일 내보내기`,'export','','secondary')}${btn(`${icon('upload')} 불러오기`,'import','','secondary')}</div></section></div><aside class="right-column stack">${profile()}<section class="card card-pad"><h3>아직 정답은 없습니다.</h3><p class="muted" style="font-family:var(--serif);line-height:2;font-size:14px;margin-top:17px">“어떤 자리에 올랐는가보다,<br>그 자리에서 무엇을<br>바꾸었는가.”</p><div class="divider"></div><p class="small muted">민의 v0.4 · 실제 제도를 참고한 가상 정치 인생</p></section></aside></div>`;}
-function render(){save();const current=tabs.find(t=>t[0]===tab),visibleTabs=storyMode()?tabs.filter(t=>['home','people','history'].includes(t[0])).map(t=>t[0]==='home'?['home','나의 선택','home']:t):tabs,headings={home:storyMode()?['나의 선택','한 번의 선택, 그다음의 나.']:['나의 집무실','이기려는 마음과 지키려는 약속이 만나는 곳.'],elections:['선거와 도전','어디서 시작하고, 어디까지 나아갈 것인가.'],policies:['정책과 공약','말했던 내일을, 살아갈 오늘로 만드세요.'],people:['정당과 인물','정치는 혼자 걷는 길이 아니니까.'],history:['나의 일대기','당신의 선택이 남긴 발자취.'],guide:['플레이 가이드','민의의 규칙과, 우리가 생략한 현실들.']};$('#app').innerHTML=`<aside class="sidebar"><button class="brand" data-action="nav" data-value="home" aria-label="민의 집무실로"><div class="brand-mark">民</div><div class="brand-copy"><div class="brand-title">민의</div><div class="brand-sub">나의 정치 일대기</div></div></button><div class="side-label">MY POLITICAL JOURNEY</div><nav class="nav" aria-label="주 메뉴">${visibleTabs.map(([id,label,ic])=>`<button class="nav-item ${tab===id?'active':''}" data-action="nav" data-value="${id}" aria-label="${label}" ${tab===id?'aria-current="page"':''}>${icon(ic)}<span>${label}</span></button>`).join('')}</nav><div class="sidebar-bottom"><div class="side-quote">한 사람의 선택이<br>모두의 내일이 되는 곳.</div><div class="side-footer"><span>민의 · 民意</span><span>v0.4</span></div></div></aside><div class="main-wrap ${storyMode()?'story-mode':''}"><header class="topbar"><span class="mobile-brand">민의</span><div class="breadcrumb">나의 정치 일대기 <span>/</span><b>${current[1]}</b></div><div class="top-actions"><span class="save-status">${icon('cloud')}${saveBlocked?'기존 기록 보호 중':storageOk?'자동 저장됨':'저장 실패 · 파일로 보관하세요'}</span><span class="date-pill">${icon('calendar')}${E.dateLabel(game)}</span><button class="top-avatar" data-action="settings" aria-label="저장과 설정">${esc(game.name.slice(0,1))}</button></div></header><main id="main"><div class="page-heading"><div><div class="eyebrow">CHAPTER ${String(Math.floor(game.tick/4)+1).padStart(2,'0')} · ${game.office?'약속을 실천하는 시간':'변화를 향한 첫걸음'}</div><h1>${headings[tab][0]}</h1><p>${headings[tab][1]}</p></div>${btn(`${icon('plus')} 새로운 인생`,'new','','secondary')}</div>${({home:renderHome,elections:renderElections,policies:renderPolicies,people:renderPeople,history:renderHistory,guide:renderGuide}[tab])()}<footer class="footnote"><span>민의 · 실제 제도를 참고한 가상 시뮬레이션. 수치와 사건은 현실의 예측이 아닙니다.</span><button data-action="nav" data-value="guide">게임 안내 및 출처 ↗</button></footer></main></div>`;}
+function renderHistory(){return `<div class="layout"><div class="stack"><section class="card hero" style="min-height:165px"><div class="hero-copy"><div class="eyebrow">THE LIFE YOU CHOSE</div><h2>${esc(game.name)}의 정치 일대기</h2><p>플레이어가 만든 가상 기록 · 실제 인물의 이력이 아닙니다.</p><p>${2026}년부터 ${E.date(game).year}년까지 · ${game.results.filter(r=>r.won).length}번의 당선 · ${game.completed.length}개의 정책 성과</p></div>${building()}</section>${renderIdentity()}${renderChapterRecap(E.storySummary?.(game)?.recap)}<section class="card card-pad"><div class="section-header"><h2>${game.ended?'이 선택들이 나의 정치였습니다.':'지금까지의 선택을 돌아볼까요?'}</h2></div><p class="muted">${game.ended?'이번 인생의 회고를 마쳤습니다. 다른 선택으로 새로운 정치 인생을 시작해 보세요.':'원하는 만큼 경험했다면 이 시점에서 회고를 마쳐도 됩니다. 대통령이 되거나 마지막 나이까지 기다릴 필요는 없습니다.'}</p><div class="flex" style="margin-top:16px;flex-wrap:wrap">${game.ended?btn('새로운 인생 시작','new'):btn('여기까지 회고하기','retire')}${btn(`${icon('download')} 현재 기록 저장`,'export','','secondary')}</div></section>${renderCareerArchives()}<div class="between"><h2>선택은 기록으로 남습니다.</h2></div><section class="card timeline">${game.logs.map(l=>`<article class="timeline-item"><div class="eyebrow">${shortDate(l.tick)} · ${l.type==='election'?'선거':l.type==='policy'?'정책':l.type==='result'?'선택의 결과':'나의 발자취'}</div><h3>${esc(l.title)}</h3><p>${esc(narrativeText(l.text))}</p>${hasOutcomeNumbers(l.text)?`<details class="creator-details"><summary>당시의 수치 기록 보기</summary><p>${esc(l.text)}</p></details>`:''}</article>`).join('')}</section></div><aside class="right-column stack">${profile()}${opinion()}</aside></div>`;}
+function renderGuide(){return `<div class="layout"><div class="stack"><section class="card rule-section"><h2>작은 선택이 쌓여, 하나의 정치가 됩니다.</h2><p style="margin-top:12px">새 인생은 첫 선거까지 일곱 번의 결정으로 시작합니다. 대표 공약·출마·선거 규모·조직의 거래를 직접 고르고, 개표에서 남은 동료와 약속을 돌아봅니다. 이후 일반 사건은 선택하면 다음 분기로 넘어갑니다. 새 출마·큰돈 출연·첫 정책은 별도 장면에서 직접 결정하며 캠프는 반복 일상만 맡습니다. 선택의 결과와 비리의 후폭풍은 화면과 일대기에 남습니다. 직접 관리 모드에서는 다음과 같이 플레이합니다. ① 이번 분기의 사건에서 입장을 고릅니다. 정답을 맞히는 대신 내가 중요하게 생각하는 가치를 골라 보세요. ② 지속 운영방침이 평소의 현장·정책·관계·회복 일정을 자동으로 이어갑니다. 사건에서 선택한 뒤 바로 다음 분기로 넘어가도 됩니다. 꼭 직접 챙길 일이 있을 때만 선택 사항인 수동 개입을 사용하세요. ③ 선거와 도전에서 출마를 선언하고 다음 분기로 넘어갑니다. 선거 분기를 마치면 공천과 개표가 진행됩니다. 당선되면 공약을 실천하고, 낙선하면 다시 준비할 수 있습니다.</p></section><section class="card rule-section"><h3>반영한 선거의 기본 구조</h3><table class="rules-table"><thead><tr><th>선거</th><th>당선 방식</th><th>임기</th></tr></thead><tbody><tr><td>대통령</td><td>전국 최다 득표 · 40세 이상</td><td>5년 단임</td></tr><tr><td>지역구 국회의원</td><td>선거구 최다 득표</td><td>4년</td></tr><tr><td>비례 국회의원</td><td>정당투표 3% 또는 지역구 5석 · 준연동 46석</td><td>4년</td></tr><tr><td>광역·기초단체장</td><td>지역 전체 최다 득표 · 연속 3기 제한</td><td>4년</td></tr><tr><td>광역의회 지역구</td><td>최다 득표 1명</td><td>4년</td></tr><tr><td>기초의회 지역구</td><td>득표순 복수 당선 · 모의 3인 선거구</td><td>4년</td></tr><tr><td>광역·기초의회 비례</td><td>정당투표 5% · 의석과 명부 순번</td><td>4년</td></tr><tr><td>교육감</td><td>비정당 · 경력 5년 · 비당원 1년</td><td>4년</td></tr><tr><td>재보궐선거</td><td>가상 국회의원 결원 이벤트</td><td>잔여 임기</td></tr></tbody></table><p style="margin-top:15px">대통령 이외의 기본 피선거권 연령은 18세로 적용합니다. 비례대표 명부의 홀수 순번 여성 추천을 반영해 캐릭터 성별에 맞는 순번을 부여합니다. 교육감은 교육자 배경의 별도 경로입니다.</p></section><section class="card rule-section"><h3>현실의 제도와 게임의 가정</h3><p>이 버전은 2026년 1분기부터 분기 단위로 진행되는 프로토타입입니다. 2026 지방선거, 2028 총선, 2030 대선을 기준으로 주기를 반복합니다. 날짜·후보 등록·공천 과정은 분기로 압축하며, 미래 선거일을 확정해서 표시하지 않습니다.</p><p style="margin-top:12px">지지율, 정당 세력, 공천 확률, 선거운동 규모, 경쟁 후보의 출마와 인물 교류는 모두 게임용 가상 수치·사건입니다. 실제 지역별 정치 성향과 실제 여론조사는 사용하지 않습니다. 비리 사건의 제안자와 상황은 가상입니다. 실존 인물로 한 선택도 플레이어가 만든 가상 커리어이며 실제 행적을 재현하지 않습니다.</p><p style="margin-top:12px">거주기간·국내 거주·국적·결격사유는 충족한 시민으로 가정합니다. 실제 전국 선거구·전체 정치인 명단, 선거구 획정 변동, 세종·제주의 최신 행정 개편, 후보 명부 인원 상한, 지방 비례의 특례, 선거비용 심사 세부 항목, 선거소송·탄핵·조기 대선은 아직 정밀 재현하지 않습니다. 세종·제주는 기초자치 선거가 없는 기본 구조를 사용합니다. 재보궐은 지역구 국회의원만 모의합니다.</p><p style="margin-top:12px">정책은 예산과 역량으로 성공 여부를 판정합니다. 공약 미이행은 임기 말 신뢰를 낮춥니다. 같은 이름의 정책을 반복해 성과를 쌓을 수 없으며, 다른 공직 출마에 필요한 사임은 공천 이후로 압축합니다. 교육감의 사업은 교육 관련 항목으로 제한합니다.</p></section><section class="card rule-section"><h3>선거 자금: 실제 규칙과 게임의 가정</h3><p>기탁금과 연령에 따른 감액, 선거 후 반환·보전의 기본 기준을 원화 회계에 반영합니다. 선거비용은 선거별 실제 공고 한도가 아니라 가상 선거구 인구에 따른 기본식 또는 2024 총선 평균 참고치입니다. 화면의 각 한도 기준을 확인해 주세요.</p><p style="margin-top:12px">정당 회계로 진행하는 비례대표·정당 추천 대선 경로의 비용 전액 지원은 게임 가정입니다. 선거 계좌 잔액과 해당 선거에만 쓰는 정당 지원, 선거 후 보전 예정액을 구분합니다. 후원금 잔액과 후원금 부담분의 보전금은 다음 선거의 재사용 자금에서 제외합니다. 실제 자금 출처별 인계처·인계 절차와 회계 심사는 축약했습니다. 자기재산 지출액 우선 공제와 당선 의원의 정치자금 재사용 특례는 아직 반영하지 않고, 게임에서는 부담 비율로 보전금을 나눕니다.</p><div class="sources" style="margin-top:16px">${F.FINANCE_SOURCES.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div></section><section class="card rule-section"><h3>자료와 레퍼런스</h3><p style="margin-bottom:15px">제도 확인: 2026.10.26 · 인물: 명부에 표시된 과거 공개 자료 기준 · 국회 정수: 2024 총선 기준. 정당별 도덕성·능력치를 부여하지 않습니다.</p><div class="sources">${SOURCES.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${s.name} ↗</a>`).join('')}</div><div class="divider"></div><p>커리어의 축적과 선택 중심 진행은 <a href="https://kickru.com/" target="_blank" rel="noopener noreferrer">킥루</a>, <a href="https://1in8b.life/ko/" target="_blank" rel="noopener noreferrer">80억 분의 1</a>, <a href="https://slbcareer.com/" target="_blank" rel="noopener noreferrer">이번 생은 야구다</a>를 참고했습니다. 화면·문구·게임 코드는 새로 만들었습니다.</p></section><section class="card rule-section"><h3>저장과 이어하기</h3><p>현재 브라우저에 자동 저장됩니다. 이전 버전의 저장 파일도 이어할 수 있습니다. 다른 기기로 옮기거나 기록을 보관하려면 파일로 내보내세요. 브라우저 데이터가 지워지면 자동 저장도 사라집니다. 지난 인생 요약은 이 브라우저에 최근 5개까지 별도로 보관하며, 현재 게임 파일 내보내기에는 포함되지 않습니다.</p><div class="flex" style="margin-top:16px">${btn(`${icon('download')} 저장 파일 내보내기`,'export','','secondary')}${btn(`${icon('upload')} 불러오기`,'import','','secondary')}</div></section></div><aside class="right-column stack">${profile()}<section class="card card-pad"><h3>아직 정답은 없습니다.</h3><p class="muted" style="font-family:var(--serif);line-height:2;font-size:14px;margin-top:17px">“어떤 자리에 올랐는가보다,<br>그 자리에서 무엇을<br>바꾸었는가.”</p><div class="divider"></div><p class="small muted">민의 v0.5 · 실제 제도를 참고한 가상 정치 인생</p></section></aside></div>`;}
+function render(){save();if(storyMode()&&tab==='home'){$('#app').innerHTML=renderStoryFrame();return;}const current=tabs.find(t=>t[0]===tab),visibleTabs=storyMode()?tabs.filter(t=>['home','people','history'].includes(t[0])).map(t=>t[0]==='home'?['home','나의 선택','home']:t):tabs,headings={home:storyMode()?['나의 선택','한 번의 선택, 그다음의 나.']:['나의 집무실','이기려는 마음과 지키려는 약속이 만나는 곳.'],elections:['선거와 도전','어디서 시작하고, 어디까지 나아갈 것인가.'],policies:['정책과 공약','말했던 내일을, 살아갈 오늘로 만드세요.'],people:['정당과 인물','정치는 혼자 걷는 길이 아니니까.'],history:['나의 일대기','당신의 선택이 남긴 발자취.'],guide:['플레이 가이드','민의의 규칙과, 우리가 생략한 현실들.']};$('#app').innerHTML=`<aside class="sidebar"><button class="brand" data-action="nav" data-value="home" aria-label="민의 집무실로"><div class="brand-mark">民</div><div class="brand-copy"><div class="brand-title">민의</div><div class="brand-sub">나의 정치 일대기</div></div></button><div class="side-label">MY POLITICAL JOURNEY</div><nav class="nav" aria-label="주 메뉴">${visibleTabs.map(([id,label,ic])=>`<button class="nav-item ${tab===id?'active':''}" data-action="nav" data-value="${id}" aria-label="${label}" ${tab===id?'aria-current="page"':''}>${icon(ic)}<span>${label}</span></button>`).join('')}</nav><div class="sidebar-bottom"><div class="side-quote">한 사람의 선택이<br>모두의 내일이 되는 곳.</div><div class="side-footer"><span>민의 · 民意</span><span>v0.5</span></div></div></aside><div class="main-wrap ${storyMode()?'story-mode':''}"><header class="topbar"><span class="mobile-brand">민의</span><div class="breadcrumb">나의 정치 일대기 <span>/</span><b>${current[1]}</b></div><div class="top-actions"><span class="save-status">${icon('cloud')}${saveBlocked?'기존 기록 보호 중':storageOk?'자동 저장됨':'저장 실패 · 파일로 보관하세요'}</span><span class="date-pill">${icon('calendar')}${E.dateLabel(game)}</span><button class="top-avatar" data-action="settings" aria-label="저장과 설정">${esc(game.name.slice(0,1))}</button></div></header><main id="main"><div class="page-heading"><div><div class="eyebrow">CHAPTER ${String(Math.floor(game.tick/4)+1).padStart(2,'0')} · ${game.office?'약속을 실천하는 시간':'변화를 향한 첫걸음'}</div><h1>${headings[tab][0]}</h1><p>${headings[tab][1]}</p></div>${btn(`${icon('plus')} 새로운 인생`,'new','','secondary')}</div>${({home:renderHome,elections:renderElections,policies:renderPolicies,people:renderPeople,history:renderHistory,guide:renderGuide}[tab])()}<footer class="footnote"><span>민의 · 실제 제도를 참고한 가상 시뮬레이션. 수치와 사건은 현실의 예측이 아닙니다.</span><button data-action="nav" data-value="guide">게임 안내 및 출처 ↗</button></footer></main></div>`;}
 let returnFocus=null;
 function modal(title,body,wide=false){if(!$('#modal').open)returnFocus=document.activeElement;$('#modal').className=wide?'new-game-dialog':'';$('#modal').innerHTML=`<div class="modal-head"><h2 id="modal-title">${title}</h2><button type="button" class="close-btn" data-action="close" aria-label="닫기">${icon('close')}</button></div><div class="modal-body">${body}</div>`;if(!$('#modal').open)$('#modal').showModal();}
 function close(){ $('#modal').close();if(returnFocus?.isConnected)returnFocus.focus?.(); }
@@ -5952,19 +6300,29 @@ function focusElement(selector,ensureVisible=false){const el=$(selector);if(el){
 function focusControl(action,value){const controls=document.querySelectorAll?.('[data-action]')||[];for(const el of controls)if(el.dataset?.action===action&&el.dataset?.value===value&&!el.disabled){el.focus?.({preventScroll:true});return true;}return false;}
 function captureCreator(){if(!creator)return;try{const form=$('#new-form');if(!form)return;const values=Object.fromEntries(new FormData(form));for(const k of ['name','age','gender','party','region','background','difficulty','careerStyle'])if(values[k]!==undefined&&!(creator.mode==='real'&&['name','party','background'].includes(k)))creator[k]=values[k];}catch{}}
 function newGameModal(politicianId='',mode='real'){creator={mode,politicianId,name:'김민준',age:'32',gender:'male',party:'ind',region:REGIONS[0],background:'citizen',difficulty:'easy',careerStyle:'field',query:'',partyFilter:'all',limit:24};renderCreator();}
-function renderCreator(){const scroll=$('#creator-roster .roster-grid')?.scrollTop||0;const p=PEOPLE.find(p=>personId(p)===creator.politicianId),real=creator.mode==='real';modal('누구의 정치 인생을 살아볼까요?',`<p class="modal-copy">익숙한 정치인의 이름으로 새롭게 시작하거나 나만의 인물을 만드세요. 누구를 선택해도 같은 성장 규칙과 난이도를 적용합니다.</p><div class="start-mode-tabs" role="group" aria-label="시작할 인물 유형"><button type="button" class="${real?'active':''}" data-action="creatorMode" data-value="real" aria-pressed="${real}">실제 정치인 ${PEOPLE.length}명</button><button type="button" class="${!real?'active':''}" data-action="creatorMode" data-value="custom" aria-pressed="${!real}">나만의 인물</button></div><form id="new-form"><input type="hidden" name="playMode" value="story"><input type="hidden" name="politicianId" value="${real?esc(creator.politicianId):''}">${real?`<div class="roster-tools"><div class="field"><label for="creator-search">이름·지역·이력 검색</label><input id="creator-search" type="search" placeholder="플레이하고 싶은 정치인을 검색하세요" value="${esc(creator.query)}" autocomplete="off"></div><div class="field"><label for="creator-party-filter">자료 기준 소속 정당</label><select id="creator-party-filter"><option value="all">모든 정당</option>${PARTIES.map(x=>`<option value="${x.id}" ${creator.partyFilter===x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></div></div><div id="creator-roster">${peopleCards(creator.query,creator.partyFilter,creator.limit,true)}</div>${p?`<section class="roster-selection card card-pad"><div class="between"><div><span class="eyebrow">YOUR CHARACTER</span><h3>${esc(p.name)} · 선택한 인물</h3><p>${esc(E.party(p.party).name)} · ${esc(p.cohort||'과거 공개 자료')} 기준</p><p class="small muted">${esc(p.role)}${p.region?' · '+esc(p.region):''}</p></div>${icon('check')}</div></section>`:'<p class="mode-note">위 목록에서 한 명을 선택하면 시작할 수 있습니다.</p>'}<p class="mode-note">실제 이력은 참고 정보입니다. 아래 나이·활동 지역·성장은 새로운 가상 커리어 설정이며 실제 인물의 능력을 평가하지 않습니다.</p>`:''}<div class="form-grid">${!real?`<div class="field"><label for="name">이름</label><input id="name" name="name" required maxlength="16" value="${esc(creator.name)}" autocomplete="off"></div><div class="field"><label for="party">시작 정당</label><select id="party" name="party">${PARTIES.map(x=>`<option value="${x.id}" ${creator.party===x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></div>`:`<input type="hidden" name="name" value="${esc(p?.name||'')}"><input type="hidden" name="party" value="${esc(p?.party||'ind')}">`}</div><div class="between"><p class="mode-note" id="scenario-summary">가상 커리어: ${esc(creator.age)}세 · ${creator.gender==='female'?'여성':'남성'} 명부 규칙 · ${esc(creator.region)}</p>${btn('설정 바꾸기','editScenario','','ghost tiny')}</div><details class="creator-details" id="creator-details"><summary>상세 설정 · 나이·지역·난이도·출발 스타일</summary><div class="form-grid"><div class="field"><label for="age">${real?'가상 커리어 시작 나이':'시작 나이'}</label><input id="age" name="age" type="number" min="18" max="65" required value="${esc(creator.age)}"></div><div class="field"><label for="gender">${real?'가상 비례명부 성별 설정':'캐릭터 성별 · 비례명부 규칙'}</label><select id="gender" name="gender"><option value="male" ${creator.gender==='male'?'selected':''}>남성 명부 규칙</option><option value="female" ${creator.gender==='female'?'selected':''}>여성 명부 규칙</option></select></div><div class="field wide"><label for="region">${real?'이번 시나리오의 활동 지역':'활동 지역'}</label><select name="region" id="region">${REGIONS.map(r=>`<option ${creator.region===r?'selected':''}>${esc(r)}</option>`).join('')}</select></div>${!real?`<div class="field wide"><label>어떤 삶을 살아왔나요?</label><div class="background-options">${BACKGROUNDS.map(b=>`<label class="background-option"><input type="radio" name="background" value="${b.id}" ${creator.background===b.id?'checked':''}><span>${b.name}<small>${b.desc}</small></span></label>`).join('')}</div></div>`:'<input type="hidden" name="background" value="citizen">'}</div><div class="form-grid"><fieldset class="field wide creator-fieldset"><legend>플레이 난이도</legend><div class="difficulty-options">${[{id:'easy',name:'쉬움 · 추천',desc:'넉넉한 회복 · 첫 도전 지원'},{id:'standard',name:'보통',desc:'빠듯한 여건 · 더 큰 선택의 부담'}].map(d=>`<label class="option-card"><input type="radio" name="difficulty" value="${d.id}" ${creator.difficulty===d.id?'checked':''}><span><strong>${d.name}</strong><small>${d.desc}</small></span></label>`).join('')}</div></fieldset><fieldset class="field wide creator-fieldset"><legend>이번에는 어떤 스타일로 시작할까요?</legend><div class="career-options">${CAREER_STYLES.map(c=>`<label class="option-card"><input type="radio" name="careerStyle" value="${c.id}" ${creator.careerStyle===c.id?'checked':''}><span><strong>${c.name}</strong><small>${c.desc}</small></span></label>`).join('')}</div><p class="inline-help">게임에서 선택하는 출발 스타일입니다. 이후 어떤 능력이든 성장시킬 수 있습니다.</p></fieldset></div></details>${game.tick>0?`<section class="roster-selection card card-pad"><span class="eyebrow">이전 인생의 발자취</span><h3>${esc(game.name)} · ${esc(E.identityProfile?.(game)?.title||'나를 알아가는 중')}</h3><p class="small muted">${game.results.filter(r=>r.won).length}번의 당선 · ${game.completed.length}개의 정책 성과 · ${game.logs.length}개의 기록</p></section>`:''}<p class="small muted" style="margin-top:18px">새로 시작하면 현재 기록을 대체하고, 이전 인생 요약을 최근 5개까지 남깁니다. 전체 기록을 보관하려면 먼저 파일로 내보내세요.</p><div class="modal-actions">${btn('현재 기록 저장','export','','secondary')}<button class="btn" type="submit" ${real&&!p?'disabled':''}>${real&&p?esc(p.name)+'으로 시작':'나의 첫걸음'} ${icon('arrow')}</button></div></form>`,true);const roster=$('#creator-roster .roster-grid');if(roster)roster.scrollTop=scroll;}
+function renderCreator(){const scroll=$('#creator-roster .roster-grid')?.scrollTop||0;const p=PEOPLE.find(p=>personId(p)===creator.politicianId),real=creator.mode==='real';modal('누구의 정치 인생을 살아볼까요?',`<p class="modal-copy">익숙한 정치인의 이름으로 새롭게 시작하거나 나만의 인물을 만드세요. 첫 선거에서 약속과 동료, 감당할 비용을 직접 정합니다.</p><div class="start-mode-tabs" role="group" aria-label="시작할 인물 유형"><button type="button" class="${real?'active':''}" data-action="creatorMode" data-value="real" aria-pressed="${real}">실제 정치인 ${PEOPLE.length}명</button><button type="button" class="${!real?'active':''}" data-action="creatorMode" data-value="custom" aria-pressed="${!real}">나만의 인물</button></div><form id="new-form"><input type="hidden" name="playMode" value="story"><input type="hidden" name="politicianId" value="${real?esc(creator.politicianId):''}">${real?`<div class="roster-tools"><div class="field"><label for="creator-search">이름·지역·이력 검색</label><input id="creator-search" type="search" placeholder="플레이하고 싶은 정치인을 검색하세요" value="${esc(creator.query)}" autocomplete="off"></div><div class="field"><label for="creator-party-filter">자료 기준 소속 정당</label><select id="creator-party-filter"><option value="all">모든 정당</option>${PARTIES.map(x=>`<option value="${x.id}" ${creator.partyFilter===x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></div></div><div id="creator-roster">${peopleCards(creator.query,creator.partyFilter,creator.limit,true)}</div>${p?`<section class="roster-selection card card-pad"><div class="between"><div><span class="eyebrow">YOUR CHARACTER</span><h3>${esc(p.name)} · 선택한 인물</h3><p>${esc(E.party(p.party).name)} · ${esc(p.cohort||'과거 공개 자료')} 기준</p><p class="small muted">${esc(p.role)}${p.region?' · '+esc(p.region):''}</p></div>${icon('check')}</div></section>`:'<p class="mode-note">위 목록에서 한 명을 선택하면 시작할 수 있습니다.</p>'}<p class="mode-note">실제 이력은 참고 정보입니다. 아래 나이·활동 지역·성장은 새로운 가상 커리어 설정이며 실제 인물의 능력을 평가하지 않습니다.</p>`:''}<div class="form-grid">${!real?`<div class="field"><label for="name">이름</label><input id="name" name="name" required maxlength="16" value="${esc(creator.name)}" autocomplete="off"></div><div class="field"><label for="party">시작 정당</label><select id="party" name="party">${PARTIES.map(x=>`<option value="${x.id}" ${creator.party===x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></div>`:`<input type="hidden" name="name" value="${esc(p?.name||'')}"><input type="hidden" name="party" value="${esc(p?.party||'ind')}">`}</div><div class="between"><p class="mode-note" id="scenario-summary">가상 커리어: ${esc(creator.age)}세 · ${creator.gender==='female'?'여성':'남성'} 명부 규칙 · ${esc(creator.region)}</p>${btn('설정 바꾸기','editScenario','','ghost tiny')}</div><details class="creator-details" id="creator-details"><summary>상세 설정 · 나이·지역·난이도·출발 스타일</summary><div class="form-grid"><div class="field"><label for="age">${real?'가상 커리어 시작 나이':'시작 나이'}</label><input id="age" name="age" type="number" min="18" max="65" required value="${esc(creator.age)}"></div><div class="field"><label for="gender">${real?'가상 비례명부 성별 설정':'캐릭터 성별 · 비례명부 규칙'}</label><select id="gender" name="gender"><option value="male" ${creator.gender==='male'?'selected':''}>남성 명부 규칙</option><option value="female" ${creator.gender==='female'?'selected':''}>여성 명부 규칙</option></select></div><div class="field wide"><label for="region">${real?'이번 시나리오의 활동 지역':'활동 지역'}</label><select name="region" id="region">${REGIONS.map(r=>`<option ${creator.region===r?'selected':''}>${esc(r)}</option>`).join('')}</select></div>${!real?`<div class="field wide"><label>어떤 삶을 살아왔나요?</label><div class="background-options">${BACKGROUNDS.map(b=>`<label class="background-option"><input type="radio" name="background" value="${b.id}" ${creator.background===b.id?'checked':''}><span>${b.name}<small>${b.desc}</small></span></label>`).join('')}</div></div>`:'<input type="hidden" name="background" value="citizen">'}</div><div class="form-grid"><fieldset class="field wide creator-fieldset"><legend>플레이 난이도</legend><div class="difficulty-options">${[{id:'easy',name:'쉬움 · 추천',desc:'넉넉한 회복 · 첫 도전 지원'},{id:'standard',name:'보통',desc:'빠듯한 여건 · 더 큰 선택의 부담'}].map(d=>`<label class="option-card"><input type="radio" name="difficulty" value="${d.id}" ${creator.difficulty===d.id?'checked':''}><span><strong>${d.name}</strong><small>${d.desc}</small></span></label>`).join('')}</div></fieldset><fieldset class="field wide creator-fieldset"><legend>이번에는 어떤 스타일로 시작할까요?</legend><div class="career-options">${CAREER_STYLES.map(c=>`<label class="option-card"><input type="radio" name="careerStyle" value="${c.id}" ${creator.careerStyle===c.id?'checked':''}><span><strong>${c.name}</strong><small>${c.desc}</small></span></label>`).join('')}</div><p class="inline-help">게임에서 선택하는 출발 스타일입니다. 이후 어떤 능력이든 성장시킬 수 있습니다.</p></fieldset></div></details>${game.tick>0?`<section class="roster-selection card card-pad"><span class="eyebrow">이전 인생의 발자취</span><h3>${esc(game.name)} · ${esc(E.identityProfile?.(game)?.title||'나를 알아가는 중')}</h3><p class="small muted">${game.results.filter(r=>r.won).length}번의 당선 · ${game.completed.length}개의 정책 성과 · ${game.logs.length}개의 기록</p></section>`:''}<p class="small muted" style="margin-top:18px">새로 시작하면 현재 기록을 대체하고, 이전 인생 요약을 최근 5개까지 남깁니다. 전체 기록을 보관하려면 먼저 파일로 내보내세요.</p><div class="modal-actions">${btn('현재 기록 저장','export','','secondary')}<button class="btn" type="submit" ${real&&!p?'disabled':''}>${real&&p?esc(p.name)+'으로 시작':'나의 첫걸음'} ${icon('arrow')}</button></div></form>`,true);const roster=$('#creator-roster .roster-grid');if(roster)roster.scrollTop=scroll;}
 function updateScenarioSummary(){if(!creator)return;captureCreator();const summary=$('#scenario-summary');if(summary)summary.textContent=`가상 커리어: ${creator.age}세 · ${creator.gender==='female'?'여성':'남성'} 명부 규칙 · ${creator.region}`;}
 function refreshCreatorRoster(){const container=$('#creator-roster');if(container&&creator)container.innerHTML=peopleCards(creator.query,creator.partyFilter,creator.limit,true);}
 function refreshPeopleRoster(){const container=$('#people-roster');if(container)container.innerHTML=peopleCards(peopleQuery,peopleParty,peopleLimit);}
-function settings(){modal('기록과 이어하기',`<p class="modal-copy">${esc(game.name)} · ${E.dateLabel(game)}<br>${saveBlocked?esc(loadMessage):`현재 기록은 이 브라우저에 ${storageOk?'자동 저장됩니다.':'저장되지 않았습니다. 파일로 보관해 주세요.'}`}</p><fieldset class="creator-fieldset"><legend>진행 방식</legend><p class="small muted">이야기 모드는 선택 한 번으로 시간이 흐르고 캠프가 실무를 맡습니다.</p><div class="difficulty-options">${btn('이야기 모드 · 추천','playMode','story',storyMode()?'':'secondary')}${btn('직접 관리 모드','playMode','manual',storyMode()?'secondary':'')}</div></fieldset><fieldset class="creator-fieldset"><legend>플레이 난이도</legend><p class="small muted">진행 중에도 바꿀 수 있습니다. 이번 분기의 직접 개입 기록은 그대로 유지합니다.</p><div class="difficulty-options">${btn('쉬움 · 여유로운 성장','difficulty','easy',game.difficulty==='easy'?'':'secondary')}${btn('보통 · 자원과 선택의 균형','difficulty','standard',game.difficulty==='standard'?'':'secondary')}</div></fieldset><div class="stack" style="margin-top:20px">${saveBlocked?btn('읽지 못한 원본 기록 내보내기','exportOriginal','','secondary full'):''}${btn(`${icon('download')} 현재 게임 저장 파일 내보내기`,'export','','secondary full')}${btn(`${icon('upload')} 저장 파일 불러오기`,'import','','secondary full')}${btn('새로운 인생 시작','new','','full')}</div><p class="small muted" style="margin-top:20px">민의 v0.4 · 파일에는 캐릭터 설정과 플레이 기록이 포함됩니다.</p>`);}
-function showResult(r){if(storyMode()){modal('유권자의 선택',`<div class="result-head"><span class="eyebrow">${esc(r.name)}</span><h2 class="result-stamp">${r.won?'당선되었습니다.':'이번엔 닿지 못했습니다.'}</h2><p>${esc(narrativeText(r.reason))}</p></div>${r.finance?`<p class="small muted">이번 선거 지출 ${won(r.finance.total)}. 반환·보전은 이후 정산됩니다.</p>`:''}<p class="small muted">${r.won?'정책 실무는 캠프가 이어갑니다. 당신은 다음 사건에서 입장을 정해 주세요.':'캠프가 다시 준비합니다. 다음 사건부터 계속할 수 있습니다.'}</p><div class="modal-actions">${btn('이야기 계속하기','afterResult','home')}</div>`);return;}modal('유권자의 선택',`<div class="result-head"><span class="eyebrow">${shortDate(r.tick)} · FICTIONAL ELECTION</span><div class="result-stamp">${r.won?'당선되었습니다.':'도전은 계속됩니다.'}</div><p>${esc(r.name)} ${r.by?'재보궐선거':''}</p></div>${r.rows.map(row=>`<div class="result-row"><div class="between"><span>${row.player?'<b>':''}${esc(row.name)}${row.player?'</b>':''}${row.partyLabel?`<small class="muted"> · ${esc(row.partyLabel)} (게임 소속)</small>`:''}</span><span>${row.percent.toFixed(1)}%${row.seats!==undefined?` · ${row.seats}석`:''}</span></div><div class="result-bar"><span style="width:${row.percent}%;background:${row.color}"></span></div></div>`).join('')}${r.finance?`<section class="campaign-budget"><h3>선거 자금 정산 예정</h3><div class="budget-row"><span>지출한 총액</span><strong>${won(r.finance.total)}</strong></div><div class="budget-row"><span>기탁금 반환 예정</span><strong>${won(r.finance.depositRefund)}</strong></div><div class="budget-row"><span>인정 선거비용 보전 예정</span><strong>${won(r.finance.expenseRefund)}</strong></div>${r.finance.donationRefund?`<div class="budget-row"><span>후원금 부담분 귀속 정리 예정</span><strong>${won(r.finance.donationRefund)}</strong></div>`:''}<p class="budget-note">${r.finance.payer==='party'?'정당 회계로 정산되며 개인 잔액에는 더하지 않습니다.':'개인이 부담한 비율만 선거 계좌에 돌아오며, 정당 부담분은 정당 회계로, 후원금 부담분은 별도 귀속 정리하며 다음 선거에 재사용하지 않습니다.'} 준비비는 보전하지 않습니다.</p></section>`:''}<div class="result-why">${esc(r.reason)}<br><br>게임 결과입니다. 실제 출마·공천·여론조사와 관계가 없습니다.</div><div class="modal-actions">${btn(r.won?'약속을 실천하러 가기':'나의 선택을 돌아보기','afterResult',r.won?'policies':'home')}</div>`);}
+function settings(){if(welcome){modal('기록에서 이어하기',`<p class="modal-copy">이전에 내보낸 저장 파일이 있다면 불러올 수 있습니다.</p><div class="modal-actions">${btn('나로 새로 시작','newCustom','','secondary')}${btn('저장 파일 불러오기','import')}</div>`);return;}modal('기록과 이어하기',`<p class="modal-copy">${esc(game.name)} · ${E.dateLabel(game)}<br>${saveBlocked?esc(loadMessage):`현재 기록은 이 브라우저에 ${storageOk?'자동 저장됩니다.':'저장되지 않았습니다. 파일로 보관해 주세요.'}`}</p><fieldset class="creator-fieldset"><legend>진행 방식</legend><p class="small muted">큰 결정은 내가 내리고, 반복되는 장부와 일정은 캠프가 맡습니다.</p><div class="difficulty-options">${btn('이야기 모드 · 추천','playMode','story',storyMode()?'':'secondary')}${btn('직접 관리 모드','playMode','manual',storyMode()?'secondary':'')}</div></fieldset><fieldset class="creator-fieldset"><legend>플레이 난이도</legend><p class="small muted">진행 중에도 바꿀 수 있습니다. 이번 분기의 직접 개입 기록은 그대로 유지합니다.</p><div class="difficulty-options">${btn('쉬움 · 여유로운 성장','difficulty','easy',game.difficulty==='easy'?'':'secondary')}${btn('보통 · 자원과 선택의 균형','difficulty','standard',game.difficulty==='standard'?'':'secondary')}</div></fieldset><div class="stack" style="margin-top:20px">${saveBlocked?btn('읽지 못한 원본 기록 내보내기','exportOriginal','','secondary full'):''}${btn(`${icon('download')} 현재 게임 저장 파일 내보내기`,'export','','secondary full')}${btn(`${icon('upload')} 저장 파일 불러오기`,'import','','secondary full')}${btn('새로운 인생 시작','new','','full')}</div><p class="small muted" style="margin-top:20px">민의 v0.5 · 파일에는 캐릭터 설정과 플레이 기록이 포함됩니다.</p>`);}
+function showResult(r){if(storyMode()){
+ const me=r.rows.find(row=>row.player),summary=E.storySummary?.(game)||{};
+ modal('개표 결과',`<div class="result-head story-result-head"><span class="eyebrow">${esc(r.name)} · 가상 선거</span><h2 class="result-stamp">${r.won?'유권자가 당신을 선택했습니다.':'이번에는 표가 모자랐습니다.'}</h2>${me?`<div class="vote-score">${me.percent.toFixed(1)}<small>%</small></div><p>${E.office(r.id).method.startsWith('pr')?'소속 정당 득표율':'나의 득표율'}</p>`:''}<p>${esc(r.reason)}</p></div><section class="counted-votes" aria-label="후보별 개표 결과">${r.rows.slice().sort((a,b)=>b.percent-a.percent).map(row=>`<div class="result-row ${row.player?'player-row':''}"><div class="between"><span>${row.player?'● ':''}${esc(row.name)}${row.partyLabel?`<small> · ${esc(row.partyLabel)}</small>`:''}</span><strong>${row.percent.toFixed(1)}%${row.seats!==undefined?` · ${row.seats}석`:''}</strong></div><div class="result-bar"><span style="width:${row.percent}%;background:${row.player?'#235543':'#9ca79b'}"></span></div></div>`).join('')}</section>${summary.recap?.electionId===r.id&&summary.recap.electionTick===r.tick?renderChapterRecap(summary.recap):''}${r.finance?`<div class="election-receipt"><span>이번 선거에 쓴 돈</span><strong>${won(r.finance.total)}</strong><p>기탁금 반환·선거비용 보전은 이후 정산됩니다.</p></div>`:''}<div class="modal-actions">${btn('내 선택이 남긴 흔적 보기','afterResult','home')}</div>`);return;}
+modal('유권자의 선택',`<div class="result-head"><span class="eyebrow">${shortDate(r.tick)} · FICTIONAL ELECTION</span><div class="result-stamp">${r.won?'당선되었습니다.':'도전은 계속됩니다.'}</div><p>${esc(r.name)} ${r.by?'재보궐선거':''}</p></div>${r.rows.map(row=>`<div class="result-row"><div class="between"><span>${row.player?'<b>':''}${esc(row.name)}${row.player?'</b>':''}${row.partyLabel?`<small class="muted"> · ${esc(row.partyLabel)} (게임 소속)</small>`:''}</span><span>${row.percent.toFixed(1)}%${row.seats!==undefined?` · ${row.seats}석`:''}</span></div><div class="result-bar"><span style="width:${row.percent}%;background:${row.color}"></span></div></div>`).join('')}${r.finance?`<section class="campaign-budget"><h3>선거 자금 정산 예정</h3><div class="budget-row"><span>지출한 총액</span><strong>${won(r.finance.total)}</strong></div><div class="budget-row"><span>기탁금 반환 예정</span><strong>${won(r.finance.depositRefund)}</strong></div><div class="budget-row"><span>인정 선거비용 보전 예정</span><strong>${won(r.finance.expenseRefund)}</strong></div>${r.finance.donationRefund?`<div class="budget-row"><span>후원금 부담분 귀속 정리 예정</span><strong>${won(r.finance.donationRefund)}</strong></div>`:''}<p class="budget-note">${r.finance.payer==='party'?'정당 회계로 정산되며 개인 잔액에는 더하지 않습니다.':'개인이 부담한 비율만 선거 계좌에 돌아오며, 정당 부담분은 정당 회계로, 후원금 부담분은 별도 귀속 정리하며 다음 선거에 재사용하지 않습니다.'} 준비비는 보전하지 않습니다.</p></section>`:''}<div class="result-why">${esc(r.reason)}<br><br>게임 결과입니다. 실제 출마·공천·여론조사와 관계가 없습니다.</div><div class="modal-actions">${btn(r.won?'약속을 실천하러 가기':'나의 선택을 돌아보기','afterResult',r.won?'policies':'home')}</div>`);}
 function doResult(r,focusSelector=''){if(r.error){toast(r.error,true);return;}const active=document.activeElement?.dataset,origin=active?.action?{action:active.action,value:active.value||''}:null;render();if(r.result){showResult(r.result);return;}toast(r.notices?.length?r.notices.join(' '):r.title||'기록했습니다.');if(focusSelector)focusElement(focusSelector,focusSelector.includes('outcome-card'));else if(!origin||!focusControl(origin.action,origin.value))focusElement('#main h1');}
 function downloadSave(text,name){const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('저장 파일을 내보냈습니다.');}
 function showPerson(id){const p=PEOPLE.find(p=>personId(p)===id||p.name===id);if(!p)return;modal(esc(p.name),`<div class="flex" style="margin-bottom:20px">${badge(esc(E.party(p.party).name))}<span class="small muted">${esc(p.cohort||'과거 자료')} 기준</span></div><p class="modal-copy"><strong>${esc(p.role)}</strong><br>${esc(p.region||'')}<br>${esc(p.note||'공개된 과거 이력을 참고한 실존 인물입니다. 게임 속 행보와 성장은 새로운 가상 시나리오입니다.')}</p>${p.source&&/^https?:\/\//.test(p.source)?`<a class="text-btn" href="${esc(p.source)}" target="_blank" rel="noopener noreferrer">공개 이력 출처 ↗</a>`:''}<div class="divider"></div><p class="small muted">가상 정책 포럼에 함께 참여할 수 있습니다. 실제 만남이나 발언을 재현하지 않으며 모든 인물에게 같은 성장 규칙을 적용합니다.</p><p class="inline-help">이번 분기의 직접 개입 기회를 씁니다. 협력의 접점을 찾는 동안 다른 현장 일정은 뒤로 미뤄집니다.</p><div class="modal-actions">${btn('가상 포럼 참여','meet',personId(p),'secondary')}${btn('이 인물로 새 인생 시작','playPerson',personId(p))}</div>`);}
 document.addEventListener('click',e=>{const el=e.target.closest('[data-action]');if(!el||el.disabled)return;const {action,value}=el.dataset;switch(action){
 case'nav':if(tabs.some(t=>t[0]===value)){tab=value;render();window.scrollTo({top:0});focusElement('#main h1');}break;
-case'choose':if(e.detail>1)break;if(storyMode()){const r=E.playChoice(game,Number(value));doResult(r,'#story-receipt h3');if(!r.result&&!r.error)focusElement('#story-receipt h3',true);}else doResult(E.choose(game,Number(value)),'.outcome-card h3');break;
-case'continueStory':{const r=E.continueStory(game);doResult(r,'#story-receipt h3');if(!r.result&&!r.error)focusElement('#story-receipt h3',true);break;}
+case'sceneChoice':case'choose':{
+ if(e.detail>1)break;
+ if(storyMode()){
+  if((el.dataset.storyToken&&el.dataset.storyToken!==decisionToken())||Date.now()-lastDecisionAt<450)break;
+  const r=action==='sceneChoice'?E.playScene(game,Number(value),E.storyScene(game)?.id):E.playChoice(game,Number(value));
+  if(r.error){toast(r.error,true);break;}lastDecisionAt=Date.now();render();
+  if(r.result)showResult(r.result);else{focusElement('#current-story h2');window.scrollTo({top:0,behavior:'instant'});const reaction=E.storySummary?.(game)?.reaction||game.lastStory;if(reaction)toast(narrativeText(typeof reaction==='string'?reaction:reaction.narrative||reaction.text||reaction.title||''));}
+ }else doResult(E.choose(game,Number(value)),'.outcome-card h3');break;}
+case'continueStory':{if(Date.now()-lastDecisionAt<450)break;const r=E.continueStory(game);if(!r.error)lastDecisionAt=Date.now();doResult(r,'#current-story h2');break;}
 case'playMode':{const r=E.setPlayMode(game,value);if(!r.error){close();tab='home';}doResult(r,'#main h1');break;}
 case'storyReport':storyReport();break;
 case'openElections':close();tab='elections';render();window.scrollTo({top:0});focusElement('#main h1');break;
@@ -6010,8 +6368,8 @@ case'import':$('#import-file').click();break;
 document.addEventListener('input',e=>{if(creator&&e.target.id==='age')updateScenarioSummary();if(e.target.id==='creator-search'&&creator){creator.query=e.target.value;creator.limit=24;refreshCreatorRoster();}else if(e.target.id==='people-search'){peopleQuery=e.target.value;peopleLimit=24;refreshPeopleRoster();}});
 document.addEventListener('change',e=>{if(creator&&['gender','region'].includes(e.target.id))updateScenarioSummary();if(e.target.id==='creator-party-filter'&&creator){creator.partyFilter=e.target.value;creator.limit=24;refreshCreatorRoster();}else if(e.target.id==='people-party-filter'){peopleParty=e.target.value;peopleLimit=24;refreshPeopleRoster();}});
 document.addEventListener('invalid',e=>{if(!$('#modal').open||e.target.closest?.('#new-form')?.id!=='new-form')return;const details=$('#creator-details');if(details)details.open=true;e.target.focus?.();},true);
-document.addEventListener('submit',e=>{if(e.target.id!=='new-form')return;e.preventDefault();captureCreator();const data=Object.fromEntries(new FormData(e.target));if(creator?.mode==='real'){const p=PEOPLE.find(p=>personId(p)===creator.politicianId);if(!p){toast('먼저 플레이할 인물을 선택해 주세요.',true);return;}data.politicianId=personId(p);data.name=p.name;data.party=p.party;}else{data.politicianId='';if(!String(data.name||'').trim()){toast('이름을 입력해 주세요.',true);return;}}const archived=archiveCareer();game=E.createGame(data);saveBlocked=false;loadMessage='';tab='home';close();render();window.scrollTo({top:0});focusElement('#main h1');toast(archived?`${game.name}의 새로운 정치 인생이 시작되었습니다.`:`새 인생을 시작했습니다. 이전 요약은 저장하지 못해 현재 화면에서만 보관합니다.`,!archived);});
-$('#import-file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>1000000)throw Error();const data=E.migrateSave(JSON.parse(await f.text()));if(!data)throw Error();modal('이 기록을 이어할까요?',`<p class="modal-copy">${esc(data.name)} · ${E.dateLabel(data)}<br>불러오면 현재 브라우저의 기록을 대체합니다.</p><div class="modal-actions">${btn('취소','close','','secondary')}<button type="button" class="btn" id="confirm-import">이 기록 이어하기</button></div>`);$('#confirm-import').onclick=()=>{game=data;saveBlocked=false;loadMessage='';tab='home';close();render();window.scrollTo({top:0});toast('기록을 불러왔습니다.');};}catch{toast('올바른 민의 저장 파일이 아닙니다. 현재 기록은 유지했습니다.',true);}e.target.value='';});
+document.addEventListener('submit',e=>{if(e.target.id!=='new-form')return;e.preventDefault();captureCreator();const data=Object.fromEntries(new FormData(e.target));if(creator?.mode==='real'){const p=PEOPLE.find(p=>personId(p)===creator.politicianId);if(!p){toast('먼저 플레이할 인물을 선택해 주세요.',true);return;}data.politicianId=personId(p);data.name=p.name;data.party=p.party;}else{data.politicianId='';if(!String(data.name||'').trim()){toast('이름을 입력해 주세요.',true);return;}}const archived=archiveCareer();game=E.createGame(data);welcome=false;lastDecisionAt=-Infinity;saveBlocked=false;loadMessage='';tab='home';close();render();window.scrollTo({top:0});focusElement('#main h1');toast(archived?`${game.name}의 새로운 정치 인생이 시작되었습니다.`:`새 인생을 시작했습니다. 이전 요약은 저장하지 못해 현재 화면에서만 보관합니다.`,!archived);});
+$('#import-file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>1000000)throw Error();const data=E.migrateSave(JSON.parse(await f.text()));if(!data)throw Error();modal('이 기록을 이어할까요?',`<p class="modal-copy">${esc(data.name)} · ${E.dateLabel(data)}<br>불러오면 현재 브라우저의 기록을 대체합니다.</p><div class="modal-actions">${btn('취소','close','','secondary')}<button type="button" class="btn" id="confirm-import">이 기록 이어하기</button></div>`);$('#confirm-import').onclick=()=>{game=data;welcome=false;lastDecisionAt=-Infinity;saveBlocked=false;loadMessage='';tab='home';close();render();window.scrollTo({top:0});toast('기록을 불러왔습니다.');};}catch{toast('올바른 민의 저장 파일이 아닙니다. 현재 기록은 유지했습니다.',true);}e.target.value='';});
 render();
 
 })();</script></body>
